@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Junhao Jia</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="brand">Junhao Jia</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a class="active" href="projects.html">Projects</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="section">
+      <div class="section-header">
+        <h2>Selected projects</h2>
+        <p class="section-note">Problem, contribution, tools, and why each project matters.</p>
+      </div>
+      <div class="timeline">
+        <div id="fishcapsule" class="timeline-item">
+          <div class="item-top">
+            <strong>FishCapsule</strong>
+            <span>Jan 2026</span>
+          </div>
+          <div class="muted">AI-Powered Self-Study Platform</div>
+          <ul class="clean">
+            <li><strong>Problem:</strong> Many AI study tools answer quickly but drift away from source material, making learning less trustworthy.</li>
+            <li><strong>My contribution:</strong> Built an end-to-end study system that orchestrates syllabus ingestion, course mapping, slide selection, explanation, and persistent study sessions.</li>
+            <li><strong>Tools:</strong> Next.js, TypeScript, pdf.js, Zod, schema-first LLM workflows, caching and citation verification.</li>
+            <li><strong>Why it matters:</strong> This project sharpened my interest in grounded generation, controllability, and reliable human-facing AI systems.</li>
+          </ul>
+          <div class="tag-list"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">RAG</span><span class="tag">EdTech</span></div>
+        </div>
+
+        <div id="spiromint" class="timeline-item">
+          <div class="item-top">
+            <strong>SpiroMint</strong>
+            <span>Nov 2025</span>
+          </div>
+          <div class="muted">LIVE AI Best Coast 2025 | 3rd Place / 113 teams</div>
+          <ul class="clean">
+            <li><strong>Problem:</strong> Creative AI demos often look exciting but lack reproducibility and traceability.</li>
+            <li><strong>My contribution:</strong> Developed a browser-based system that transforms audio files into reproducible parametric animations with metadata export.</li>
+            <li><strong>Tools:</strong> JavaScript Canvas, Meyda, MusicTempo, client-side feature extraction, deterministic metadata pipelines.</li>
+            <li><strong>Why it matters:</strong> It taught me how to ship under pressure without sacrificing structural clarity.</li>
+          </ul>
+          <div class="tag-list"><span class="tag">JavaScript</span><span class="tag">audio features</span><span class="tag">creative AI</span><span class="tag">hackathon</span></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="item-top">
+            <strong>Skin Cancer Classification</strong>
+            <span>Dec 2025</span>
+          </div>
+          <div class="muted">Kaggle Competition | Stats 101C</div>
+          <ul class="clean">
+            <li><strong>Problem:</strong> Build a stable machine learning pipeline on a 50,000-row dermatology dataset.</li>
+            <li><strong>My contribution:</strong> Built a full preprocessing and modeling workflow, compared multiple models under cross-validation, and selected a ridge-regularized logistic approach.</li>
+            <li><strong>Tools:</strong> Python, scikit-learn, logistic regression, random forest, XGBoost, ROC/AUC analysis.</li>
+            <li><strong>Why it matters:</strong> It reinforced the habit of choosing features and preprocessing based on stability, not leaderboard superstition.</li>
+          </ul>
+          <div class="tag-list"><span class="tag">ML pipeline</span><span class="tag">classification</span><span class="tag">cross-validation</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>Junhao Jia</span>
+      <span>Projects / Portfolio</span>
+    </div>
+  </footer>
+</body>
+</html>
