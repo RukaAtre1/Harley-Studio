@@ -5,325 +5,362 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Junhao Jia is a UCLA Statistics and Data Science student building a story-driven portfolio with data, design, and writing."
+      content="Junhao Jia is a UCLA-based AI builder focused on grounded systems, product thinking, and creative computation."
     />
-    <title>Junhao Jia | Harley Studio</title>
+    <title>Harley Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,600;6..96,700;6..96,800&family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="assets/css/styles.css" />
     <script src="assets/js/main.js" defer></script>
   </head>
-  <body data-page="home">
-    <div class="site-shell">
-      <header class="site-header">
-        <a class="brand-mark" href="index.html">
-          <span class="brand-mark__eyebrow">Harley Studio</span>
-          <span class="brand-mark__name">Junhao Jia</span>
-        </a>
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Open menu">
-          <span></span>
-          <span></span>
-        </button>
-        <nav class="site-nav" aria-label="Primary">
-          <a href="index.html" data-nav="home">Home</a>
-          <a href="about.html" data-nav="about">About</a>
-          <a href="resume.html" data-nav="resume">Experience</a>
-          <a href="projects.html" data-nav="projects">Projects</a>
-          <a href="writing.html" data-nav="writing">Writing</a>
-          <a href="contact.html" data-nav="contact">Contact</a>
-          <a class="button button--small" href="assets/resume.pdf" target="_blank" rel="noreferrer">Resume PDF</a>
-        </nav>
-      </header>
+  <body>
+    <canvas class="starfield" aria-hidden="true"></canvas>
+    <div class="page-noise" aria-hidden="true"></div>
+    <div class="page-glow" aria-hidden="true"></div>
 
-      <main>
-        <section class="hero-stage reveal">
-          <div class="hero-stage__copy">
-            <p class="section-label">Retro portal, modern portfolio</p>
-            <h1>There are countless ways to tell a story about the world. This is mine.</h1>
-            <p class="lead">
-              I am Junhao (Harley) Jia, a UCLA Statistics and Data Science student building a
-              portfolio around analysis, design, and writing. The opening visual is playful; the
-              structure underneath stays clear, professional, and easy to browse.
-            </p>
-            <div class="cta-row">
-              <a class="button" href="#identity-layer">Enter the Site</a>
-              <a class="button button--ghost" href="projects.html">See Projects</a>
-              <a class="button button--ghost" href="writing.html">Read Writing</a>
+    <header class="site-header">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Open navigation">
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#home" data-scroll="home">Home</a>
+        <a href="#about" data-scroll="about">About</a>
+        <a href="#experience" data-scroll="experience">Experience</a>
+        <a href="#projects" data-scroll="projects">Projects</a>
+        <a href="#contact" data-scroll="contact">Contact</a>
+      </nav>
+    </header>
+
+    <main class="site-main">
+      <section class="hero reveal" id="home" data-section="home">
+        <div class="hero-planet" aria-label="Hero orbit hub">
+          <span class="hero-planet__core-glow" aria-hidden="true"></span>
+          <svg class="hero-traces" aria-hidden="true"></svg>
+
+          <article class="intro-card">
+            <p class="intro-card__eyebrow">My name is:</p>
+            <div class="intro-card__title">
+              <h1 data-name="Junhao Jia">Junhao Jia</h1>
+            </div>
+            <span class="intro-card__divider" aria-hidden="true"></span>
+            <p class="intro-card__eyebrow">I'm a:</p>
+            <ul class="descriptor-list descriptor-list--planet">
+              <li>AI Builder</li>
+              <li>Product-Minded Researcher</li>
+              <li>Pianist</li>
+              <li>AI Entrepreneur</li>
+            </ul>
+          </article>
+
+          <div class="orbit orbit--github">
+            <div class="orbit__spinner">
+              <a
+                class="orbit-icon orbit-icon--github"
+                href="https://github.com/RukaAtre1"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open GitHub profile for RukaAtre1"
+              >
+                <img src="assets/images/Ruka.jpg" alt="Ruka profile image linking to GitHub" />
+              </a>
             </div>
           </div>
 
-          <div class="hero-stage__visual">
-            <div class="hero-stage__halo hero-stage__halo--left"></div>
-            <div class="hero-stage__halo hero-stage__halo--right"></div>
-            <div class="hero-stage__orbit hero-stage__orbit--outer"></div>
-            <div class="hero-stage__orbit hero-stage__orbit--inner"></div>
-
-            <div class="portal-recursion" aria-hidden="true">
-              <div class="portal-face portal-face--level-1">
-                <div class="portal-face__mask"></div>
-                <div class="portal-face__eyes"><span></span><span></span></div>
-                <span class="portal-face__nose"></span>
-                <span class="portal-face__philtrum"></span>
-                <span class="portal-face__whiskers portal-face__whiskers--left"></span>
-                <span class="portal-face__whiskers portal-face__whiskers--right"></span>
-                <div class="portal-face__mouth">
-                  <div class="portal-face portal-face--level-2">
-                    <div class="portal-face__mask"></div>
-                    <div class="portal-face__eyes"><span></span><span></span></div>
-                    <span class="portal-face__nose"></span>
-                    <span class="portal-face__philtrum"></span>
-                    <span class="portal-face__whiskers portal-face__whiskers--left"></span>
-                    <span class="portal-face__whiskers portal-face__whiskers--right"></span>
-                    <div class="portal-face__mouth">
-                      <div class="portal-face portal-face--level-3">
-                        <div class="portal-face__mask"></div>
-                        <div class="portal-face__eyes"><span></span><span></span></div>
-                        <span class="portal-face__nose"></span>
-                        <span class="portal-face__philtrum"></span>
-                        <span class="portal-face__whiskers portal-face__whiskers--left"></span>
-                        <span class="portal-face__whiskers portal-face__whiskers--right"></span>
-                        <div class="portal-face__mouth">
-                          <div class="portal-face portal-face--level-4">
-                            <div class="portal-face__mask"></div>
-                            <div class="portal-face__eyes"><span></span><span></span></div>
-                            <span class="portal-face__nose"></span>
-                            <span class="portal-face__philtrum"></span>
-                            <span class="portal-face__whiskers portal-face__whiskers--left"></span>
-                            <span class="portal-face__whiskers portal-face__whiskers--right"></span>
-                            <div class="portal-face__mouth">
-                              <div class="portal-face portal-face--level-5">
-                                <div class="portal-face__mask"></div>
-                                <div class="portal-face__eyes"><span></span><span></span></div>
-                                <span class="portal-face__nose"></span>
-                                <span class="portal-face__philtrum"></span>
-                                <span class="portal-face__whiskers portal-face__whiskers--left"></span>
-                                <span class="portal-face__whiskers portal-face__whiskers--right"></span>
-                                <div class="portal-face__mouth">
-                                  <div class="portal-face__core">
-                                    <img src="assets/images/Ruka.jpg" alt="" />
-                                  </div>
-                                </div>
-                                <span class="portal-face__collar"></span>
-                                <span class="portal-face__bell"></span>
-                              </div>
-                            </div>
-                            <span class="portal-face__collar"></span>
-                            <span class="portal-face__bell"></span>
-                          </div>
-                        </div>
-                        <span class="portal-face__collar"></span>
-                        <span class="portal-face__bell"></span>
-                      </div>
-                    </div>
-                    <span class="portal-face__collar"></span>
-                    <span class="portal-face__bell"></span>
-                  </div>
-                </div>
-                <span class="portal-face__collar"></span>
-                <span class="portal-face__bell"></span>
-              </div>
-            </div>
-
-            <div class="hero-stage__caption">
-              <p>Classic-cartoon recursion, 5 layers deep.</p>
-              <p>The deeper you go, the more the site shifts from character to story.</p>
-            </div>
-
-            <button
-              class="nono-widget"
-              type="button"
-              data-nono-toggle
-              aria-expanded="false"
-              aria-controls="nono-panel"
-              aria-label="Open NONO helper"
-            >
-              <span class="nono-widget__antenna"></span>
-              <span class="nono-widget__core">
-                <span class="nono-widget__eye"></span>
-                <span class="nono-widget__eye"></span>
-              </span>
-              <span class="nono-widget__label">NONO</span>
-            </button>
-
-            <div class="nono-panel" id="nono-panel" hidden>
-              <p class="section-label">Super NONO</p>
-              <h3>Navigation scan complete.</h3>
-              <p>Start with the next layer for identity, then move to Projects, Experience, and Writing.</p>
+          <div class="orbit orbit--linkedin">
+            <div class="orbit__spinner">
+              <a
+                class="orbit-icon orbit-icon--linkedin"
+                href="https://www.linkedin.com/in/junhao-harley-jia/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open LinkedIn profile"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    fill="#0a66c2"
+                    d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.03-1.85-3.03-1.85 0-2.13 1.45-2.13 2.94v5.66H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.61 0 4.27 2.38 4.27 5.47v6.27ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.12 20.45H3.56V9h3.56v11.45Z"
+                  />
+                </svg>
+              </a>
             </div>
           </div>
 
-          <a class="scroll-cue" href="#identity-layer">Scroll to enter the next layer</a>
-        </section>
-
-        <section class="section home-section reveal" id="identity-layer">
-          <div class="section-heading">
-            <div>
-              <p class="section-label">Layer 1</p>
-              <h2>Who I am, without trying to say everything at once.</h2>
+          <div class="orbit orbit--email">
+            <div class="orbit__spinner">
+              <a
+                class="orbit-icon orbit-icon--email"
+                href="mailto:harleyjia123@g.ucla.edu"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Send email to harleyjia123@g.ucla.edu"
+              >
+                <img src="assets/images/gmail-app-icon.svg" alt="Gmail icon" />
+              </a>
             </div>
           </div>
 
-          <div class="intro-bento">
-            <article class="intro-card intro-card--portrait">
-              <div class="intro-card__image">
-                <img src="assets/images/Ruka.jpg" alt="Ruka portrait used as the signature visual for Harley Studio" />
-              </div>
-              <p class="section-label">Signature Visual</p>
-              <h3>Ruka becomes the face of the site.</h3>
-              <p>
-                I wanted the site to feel more personal than a default resume template, so the visual
-                system starts with a character-led identity rather than a generic headshot card.
-              </p>
-            </article>
-
-            <article class="intro-card intro-card--wide">
-              <p class="section-label">Personal Summary</p>
-              <h3>Statistics, product thinking, and calm presentation.</h3>
-              <p>
-                I enjoy taking ambiguous questions and giving them structure: deciding what matters,
-                building the technical workflow, and presenting the result in a way that feels clear
-                and trustworthy. That applies to analysis, dashboards, research, and writing.
-              </p>
-              <ul class="quick-list">
-                <li>UCLA B.S. in Statistics and Data Science</li>
-                <li>Expected graduation: June 2026</li>
-                <li>Open to internships, research, and collaboration</li>
-              </ul>
-            </article>
-
-            <article class="intro-card">
-              <p class="section-label">Current Focus</p>
-              <h3>Analysis that people can act on.</h3>
-              <p>
-                I care most about work where technical quality and communication quality matter at the
-                same time.
-              </p>
-            </article>
-
-            <article class="intro-card">
-              <p class="section-label">How to Read</p>
-              <h3>Each section goes one layer deeper.</h3>
-              <p>
-                Home introduces the world. Projects and Experience show execution. Writing shows how
-                the thinking continues.
-              </p>
-            </article>
-          </div>
-        </section>
-
-        <section class="section home-section reveal">
-          <div class="section-heading">
-            <div>
-              <p class="section-label">Layer 2</p>
-              <h2>Selected work in a wider, desktop-first rhythm.</h2>
+          <div class="orbit orbit--resume">
+            <div class="orbit__spinner">
+              <a
+                class="orbit-icon orbit-icon--resume"
+                href="assets/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open resume PDF"
+              >
+                <svg viewBox="0 0 32 32" aria-hidden="true">
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2.2"
+                    d="M10 4.8h8.75l4.45 4.46V25a2.2 2.2 0 0 1-2.2 2.2H10A2.2 2.2 0 0 1 7.8 25V7A2.2 2.2 0 0 1 10 4.8Z"
+                  />
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2.2"
+                    d="M18.75 4.95v4.7h4.5"
+                  />
+                  <circle cx="13.25" cy="14.2" r="2.1" fill="currentColor" />
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-width="2.2"
+                    d="M11 20c1-1.6 3.4-2.5 5.2-2.5"
+                  />
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-width="2.2"
+                    d="M19 14.4h2.7M19 18.6h2.7M11 23h10.7"
+                  />
+                </svg>
+              </a>
             </div>
-            <a class="text-link" href="projects.html">Open full projects page</a>
           </div>
 
-          <div class="story-grid">
-            <article class="story-card story-card--featured">
-              <p class="project-card__kicker">Featured Project</p>
-              <h3>FishCapsule</h3>
-              <p>
-                Built a study platform with grounded retrieval, schema-first generation, and a
-                workflow aimed at making AI explanations more reliable and defensible.
-              </p>
-              <div class="tag-row">
-                <span class="tag">Next.js</span>
-                <span class="tag">TypeScript</span>
-                <span class="tag">LLMs</span>
-                <span class="tag">RAG</span>
-              </div>
-            </article>
-
-            <article class="story-card story-card--accent">
-              <p class="project-card__kicker">Experience</p>
-              <h3>PLM Data Analytics at TTI</h3>
-              <p>
-                Worked with 6.18M+ usage logs, ETL pipelines, and reporting systems to support
-                operational decisions and license savings.
-              </p>
-            </article>
-
-            <article class="story-card">
-              <p class="project-card__kicker">Research</p>
-              <h3>Music to Spirograph Pipeline</h3>
-              <p>
-                Mapped audio features into parametric geometry, frame rendering, and exported motion
-                outputs for a math-code-art workflow.
-              </p>
-            </article>
-
-            <article class="story-card">
-              <p class="project-card__kicker">Ways of Working</p>
-              <h3>Rigorous, visual, collaborative.</h3>
-              <p>
-                I tend to work best when the process goes from modeling to polish instead of stopping
-                at a technically correct but unreadable result.
-              </p>
-            </article>
-
-            <article class="story-card story-card--wide">
-              <p class="project-card__kicker">Toolset</p>
-              <h3>R, Python, SQL, Tableau, Quarto, JavaScript, Git.</h3>
-              <p>
-                The stack changes by project, but the goal stays the same: make the output easier to
-                trust, easier to explain, and easier to use.
-              </p>
-            </article>
-          </div>
-        </section>
-
-        <section class="section home-section reveal">
-          <div class="section-heading">
-            <div>
-              <p class="section-label">Layer 3</p>
-              <h2>Writing turns the portfolio into something that can keep growing.</h2>
+          <div class="orbit orbit--fish">
+            <div class="orbit__spinner">
+              <a
+                class="orbit-icon orbit-icon--fish"
+                href="https://fish-capsule.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open FishCapsule"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M12 2.75c3.45 0 6.25 2.8 6.25 6.25 0 1.31-.4 2.53-1.09 3.54l-5.16 7.17-5.16-7.17A6.2 6.2 0 0 1 5.75 9c0-3.45 2.8-6.25 6.25-6.25Zm0 3A3.25 3.25 0 1 0 12 12.25a3.25 3.25 0 0 0 0-6.5Z"
+                  />
+                </svg>
+              </a>
             </div>
-            <a class="text-link" href="writing.html">Visit Writing</a>
           </div>
-
-          <div class="feature-grid feature-grid--home">
-            <article class="feature-card">
-              <h3>Project retrospectives</h3>
-              <p>Short writeups on what changed, what failed, and what I would do differently next time.</p>
-            </article>
-            <article class="feature-card">
-              <h3>Course reflections</h3>
-              <p>Notes that connect statistical ideas from class to the constraints of real projects.</p>
-            </article>
-            <article class="feature-card">
-              <h3>Design and communication</h3>
-              <p>Essays on how layout, pacing, and wording change whether technical work feels credible.</p>
-            </article>
-          </div>
-        </section>
-
-        <section class="section callout callout--home reveal">
-          <div>
-            <p class="section-label">Final Layer</p>
-            <h2>Then the site resolves into the practical stuff: resume, links, and contact.</h2>
-            <p class="lead">
-              The playful opening is there to be memorable. The rest of the site still serves the
-              same purpose as a good portfolio: tell the story clearly and make the next click obvious.
-            </p>
-          </div>
-          <div class="cta-row">
-            <a class="button" href="contact.html">Contact Me</a>
-            <a class="button button--ghost" href="resume.html">View Experience</a>
-          </div>
-        </section>
-      </main>
-
-      <footer class="site-footer">
-        <p>Built for STATS 140XP, then redesigned into a story-driven site that can keep evolving.</p>
-        <div class="footer-links">
-          <a href="about.html">About</a>
-          <a href="projects.html">Projects</a>
-          <a href="writing.html">Writing</a>
-          <a href="contact.html">Contact</a>
         </div>
-      </footer>
-    </div>
+      </section>
+
+      <section class="section-shell reveal" id="about" data-section="about">
+        <div class="section-heading">
+          <p class="eyebrow">About</p>
+          <h2>Grounded systems over empty demos.</h2>
+        </div>
+
+        <div class="about-layout">
+          <article class="prose-card">
+            <p>
+              I'm a UCLA student majoring in Statistics and Data Science, with a minor in Data
+              Science Engineering. Across research, internships, and independent projects, I'm most
+              interested in turning technical capability into systems that people can actually use
+              and verify.
+            </p>
+            <p>
+              What I care about most is not just whether a model can generate something impressive,
+              but whether its outputs remain grounded, interpretable, and trustworthy in real
+              workflows. That perspective shapes how I think about AI in learning, data products,
+              and creative tools.
+            </p>
+          </article>
+
+          <div class="detail-stack">
+            <article class="detail-card detail-card--accent">
+              <p class="detail-card__label">Education</p>
+              <h3>UCLA</h3>
+              <p>B.S. in Statistics and Data Science</p>
+            </article>
+            <article class="detail-card">
+              <p class="detail-card__label">Current Focus</p>
+              <h3>Grounded AI</h3>
+              <p>Usable workflows, interpretable outputs, product-level trust.</p>
+            </article>
+            <article class="detail-card">
+              <p class="detail-card__label">Timeline</p>
+              <h3>Expected June 2026</h3>
+              <p>Minor in Data Science Engineering.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell reveal" id="experience" data-section="experience">
+        <div class="section-heading">
+          <p class="eyebrow">Selected Experience</p>
+          <h2>Two signals, both with proof.</h2>
+        </div>
+
+        <div class="experience-grid">
+          <article class="experience-card">
+            <div class="experience-card__top">
+              <p class="detail-card__label">Techtronic Industries</p>
+              <h3>PLM Data Analytics Intern</h3>
+            </div>
+            <p class="experience-card__body">
+              Analyzed enterprise usage data and built reporting workflows that improved license
+              efficiency and reduced manual reporting effort.
+            </p>
+            <ul class="metric-list">
+              <li>6.18M+ usage logs analyzed</li>
+              <li>$34K projected annual savings</li>
+              <li>38+ hours/month of manual work reduced</li>
+            </ul>
+          </article>
+
+          <a
+            class="experience-card experience-card--link"
+            href="https://jlu227.wixsite.com/kay-lu/teaching"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="experience-card__top">
+              <p class="detail-card__label">UCLA Math-Code-Art Initiative</p>
+              <h3>Undergraduate Researcher</h3>
+            </div>
+            <p class="experience-card__body">
+              Built music-conditioned generative systems that translate audio features into
+              structured visual output for reproducible computational art.
+            </p>
+            <ul class="metric-list">
+              <li>Signal-to-geometry pipeline design</li>
+              <li>NumPy, PIL, and FFmpeg workflow</li>
+              <li>Reproducible, interpretable creative output</li>
+            </ul>
+          </a>
+        </div>
+      </section>
+
+      <section class="section-shell reveal" id="projects" data-section="projects">
+        <div class="section-heading">
+          <p class="eyebrow">Selected Work</p>
+          <h2>Public work with clear entry points.</h2>
+        </div>
+
+        <div class="project-grid">
+          <a
+            class="project-card"
+            href="https://fish-capsule.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="project-card__media">
+              <img src="assets/images/fishcapsule-landing.png" alt="FishCapsule landing page preview" />
+            </div>
+            <div class="project-card__content">
+              <p class="detail-card__label">FishCapsule</p>
+              <h3>Grounded study platform</h3>
+              <p>
+                RAG, structured outputs, and source-linked learning workflows designed to make
+                educational AI more trustworthy.
+              </p>
+            </div>
+          </a>
+
+          <a
+            class="project-card"
+            href="https://devpost.com/software/spiromint?_gl=1*15zkds*_gcl_au*MzgzODUwOTQuMTc3MDY2ODczNA..*_ga*MjA3ODkwNDk0NS4xNzYxNjI5MjYx*_ga_0YHJK3Y10M*czE3NzM2NTg4MzckbzM1JGcxJHQxNzczNjU4ODc0JGoyMyRsMCRoMA.."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="project-card__media">
+              <img src="assets/images/spiromint-cover.jpg" alt="SpiroMint project preview" />
+            </div>
+            <div class="project-card__content">
+              <p class="detail-card__label">SpiroMint</p>
+              <h3>Audio-driven visual system</h3>
+              <p>
+                Music features translated into controlled geometric animation through a reproducible,
+                browser-based pipeline.
+              </p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="section-shell reveal" id="contact" data-section="contact">
+        <div class="section-heading">
+          <p class="eyebrow">Contact</p>
+          <h2>Direct routes, including resume.</h2>
+        </div>
+
+        <p class="contact-copy">
+          I'm open to conversations about internships, research, and collaborations related to AI
+          systems, data products, and human-centered tools. You can also open my current resume
+          directly here.
+        </p>
+
+        <div class="contact-grid">
+          <a
+            class="contact-card contact-card--resume"
+            href="assets/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <p class="detail-card__label">Resume</p>
+            <h3>Open current PDF</h3>
+            <p>Preview or download the latest uploaded resume file.</p>
+          </a>
+          <a
+            class="contact-card"
+            href="https://github.com/RukaAtre1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <p class="detail-card__label">GitHub</p>
+            <h3>RukaAtre1</h3>
+            <p>Code, experiments, and shipped project work.</p>
+          </a>
+          <a
+            class="contact-card"
+            href="https://www.linkedin.com/in/junhao-harley-jia/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <p class="detail-card__label">LinkedIn</p>
+            <h3>Junhao Harley Jia</h3>
+            <p>Professional profile, experience timeline, and network.</p>
+          </a>
+          <a
+            class="contact-card"
+            href="mailto:harleyjia123@g.ucla.edu"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <p class="detail-card__label">Email</p>
+            <h3>harleyjia123@g.ucla.edu</h3>
+            <p>Best route for internships, research, and direct outreach.</p>
+          </a>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
