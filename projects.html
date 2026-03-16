@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Projects page for a polished personal website."
+      content="Selected projects by Junhao Jia."
     />
-    <title>Projects | Junhao</title>
+    <title>Projects | Junhao Jia</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="assets/css/styles.css" />
@@ -17,8 +17,8 @@
     <div class="site-shell">
       <header class="site-header">
         <a class="brand-mark" href="index.html">
-          <span class="brand-mark__eyebrow">Personal Website</span>
-          <span class="brand-mark__name">Junhao</span>
+          <span class="brand-mark__eyebrow">Harley Studio</span>
+          <span class="brand-mark__name">Junhao Jia</span>
         </a>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Open menu">
           <span></span>
@@ -29,6 +29,7 @@
           <a href="about.html" data-nav="about">About</a>
           <a href="resume.html" data-nav="resume">Experience</a>
           <a href="projects.html" data-nav="projects">Projects</a>
+          <a href="writing.html" data-nav="writing">Writing</a>
           <a href="contact.html" data-nav="contact">Contact</a>
           <a class="button button--small" href="assets/resume.pdf" target="_blank" rel="noreferrer">Resume PDF</a>
         </nav>
@@ -36,11 +37,11 @@
 
       <main>
         <section class="page-intro reveal">
-          <p class="section-label">Projects / Portfolio</p>
-          <h1>Show how you think, not just what tools you know.</h1>
+          <p class="section-label">Projects</p>
+          <h1>Each project card answers the same four questions: problem, contribution, tools, outcome.</h1>
           <p class="lead">
-            The strongest portfolio entries tell a quick story: the problem, your contribution, the tools,
-            and what the final output made possible. These cards are already structured that way.
+            That structure keeps the page easy to scan and makes it clearer what I actually did in
+            each project.
           </p>
         </section>
 
@@ -48,61 +49,76 @@
           <div class="project-grid project-grid--full">
             <article class="project-card project-card--featured">
               <p class="project-card__kicker">Featured Project</p>
-              <h2>FishCapsule - AI-Powered Self-Study Platform</h2>
+              <h2>FishCapsule</h2>
               <p class="project-card__summary">
-                Built an end-to-end agentic study system orchestrating syllabus ingestion, course mapping, and explanation. Designed a schema-first LLM pipeline reducing invalid generations by 70%.
+                Built an AI-powered self-study platform that turns course materials into grounded,
+                structured learning sessions.
               </p>
               <div class="detail-grid">
                 <div>
                   <p class="detail-grid__label">Problem</p>
-                  <p>Students need persistent, reliable, and grounded study sessions based on precise class material.</p>
+                  <p>Students need reliable explanations tied closely to actual course content instead of vague generic answers.</p>
                 </div>
                 <div>
                   <p class="detail-grid__label">Contribution</p>
-                  <p>Implemented slide-grounded RAG with pdf.js extraction, stable chunking, citation verification, and hash-based caching.</p>
+                  <p>Designed a schema-first retrieval and generation workflow with stable chunking, grounded citations, and caching.</p>
                 </div>
                 <div>
                   <p class="detail-grid__label">Tools</p>
                   <div class="tag-row">
                     <span class="tag">Next.js</span>
                     <span class="tag">TypeScript</span>
-                    <span class="tag">LLMs / Zod</span>
+                    <span class="tag">LLMs</span>
                     <span class="tag">RAG</span>
                   </div>
                 </div>
                 <div>
-                  <p class="detail-grid__label">Link</p>
-                  <a class="text-link" href="#" target="_blank" rel="noreferrer">Showcased at PIC Spotlight</a>
+                  <p class="detail-grid__label">Outcome</p>
+                  <p>Improved the reliability of generated outputs and created a more defensible study workflow.</p>
                 </div>
               </div>
             </article>
 
             <article class="project-card">
-              <p class="project-card__kicker">Hackathon Winner</p>
-              <h3>SpiroMint (LIVE AI Best Coast 2025)</h3>
+              <p class="project-card__kicker">Research + Visualization</p>
+              <h3>SpiroMint</h3>
               <p>
-                Developed a browser-based system that transforms audio files into reproducible parametric animations using feature extraction and custom multi-rotor curves. Integrated IPFS and wallet-based minting.
+                Developed a browser-based system that transforms audio files into reproducible
+                parametric animations and integrated wallet-based minting workflows.
               </p>
               <div class="tag-row">
                 <span class="tag">JavaScript Canvas</span>
                 <span class="tag">Meyda</span>
                 <span class="tag">Blockchain</span>
               </div>
-              <a class="text-link" href="#" target="_blank" rel="noreferrer">3rd/113 & Fintech Winner</a>
             </article>
 
             <article class="project-card">
               <p class="project-card__kicker">Machine Learning</p>
               <h3>Skin Cancer Classification</h3>
               <p>
-                Built a full ML pipeline for a 50,000-row dermatology dataset. Achieved 0.60710 test accuracy using a ridge-regularized logistic model validated with ROC and AUC analysis.
+                Built an end-to-end classification pipeline for a 50,000-row dermatology dataset and
+                evaluated models with ROC and AUC to compare performance clearly.
               </p>
               <div class="tag-row">
                 <span class="tag">Python</span>
                 <span class="tag">Logistic Regression</span>
                 <span class="tag">Random Forest</span>
               </div>
-              <a class="text-link" href="#" target="_blank" rel="noreferrer">Ranked 7th (Kaggle Stats 101C)</a>
+            </article>
+
+            <article class="project-card">
+              <p class="project-card__kicker">Data Operations</p>
+              <h3>PLM License Optimization Pipeline</h3>
+              <p>
+                Combined usage logs and internal systems into a cleaner reporting process that helped
+                identify inactive accounts and operational savings opportunities.
+              </p>
+              <div class="tag-row">
+                <span class="tag">SQL</span>
+                <span class="tag">Pandas</span>
+                <span class="tag">ETL</span>
+              </div>
             </article>
           </div>
         </section>
@@ -111,41 +127,40 @@
           <div class="split-section__main">
             <div class="section-heading">
               <div>
-                <p class="section-label">What makes a project card strong</p>
-                <h2>Keep the signal high and the wording precise.</h2>
+                <p class="section-label">Why this layout works</p>
+                <h2>It lets someone scan fast without losing the substance.</h2>
               </div>
             </div>
             <div class="feature-grid">
               <article class="feature-card">
-                <h3>Start with the problem</h3>
-                <p>The reader should understand why the work mattered before they see the tools.</p>
+                <h3>Problem first</h3>
+                <p>The reader sees why the project matters before seeing the technical stack.</p>
               </article>
               <article class="feature-card">
-                <h3>Name your contribution</h3>
-                <p>Be explicit about your role, especially in team work or class projects.</p>
+                <h3>Contribution named</h3>
+                <p>The card makes your role visible instead of hiding it inside vague team wording.</p>
               </article>
               <article class="feature-card">
-                <h3>Link to proof</h3>
-                <p>Attach a repo, report, dashboard, or write-up whenever you can.</p>
+                <h3>Compact tools</h3>
+                <p>Tags keep the stack present but visually lightweight.</p>
               </article>
             </div>
           </div>
-
           <aside class="split-section__side">
             <div class="panel-card panel-card--accent">
-              <p class="section-label">Portfolio Goal</p>
-              <h3>Three strong entries are enough.</h3>
-              <p>You do not need many projects. You need a few that communicate taste, judgment, and follow-through.</p>
+              <p class="section-label">Portfolio Note</p>
+              <h3>Quality beats quantity.</h3>
+              <p>Three to four strong entries are enough if each one communicates judgment, execution, and clarity.</p>
             </div>
           </aside>
         </section>
       </main>
 
       <footer class="site-footer">
-        <p>Need context first? Pair your projects with the personal story on the About page.</p>
+        <p>About explains the background; Writing shows how the thinking continues beyond the project list.</p>
         <div class="footer-links">
           <a href="about.html">About</a>
-          <a href="resume.html">Experience</a>
+          <a href="writing.html">Writing</a>
           <a href="contact.html">Contact</a>
         </div>
       </footer>
