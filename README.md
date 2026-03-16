@@ -1,43 +1,43 @@
-# Personal Website
+# Harley Studio
 
-This project is a polished multi-page personal website starter for the STATS 140XP final project.
+Personal portfolio website for Junhao Jia.
 
-## Included
+Live site: [rukaatre1.github.io/Harley-Studio](https://rukaatre1.github.io/Harley-Studio/)
 
-- `index.html`: strong landing page with a quick professional summary
-- `about.html`: personal description, education, interests, and values
-- `experience.html`: timeline plus embedded PDF resume
-- `projects.html`: portfolio cards with problem / contribution / tools structure
-- `contact.html`: email, profile links, and resume access
-- `assets/css/styles.css`: full visual system and responsive layout
-- `assets/images/profile-portrait.svg`: replace with your real headshot
-- `assets/files/junhao-resume-template.pdf`: replace with your actual resume PDF
+## Overview
 
-## Fast Personalization
+This repository contains a static personal website built with HTML, CSS, and JavaScript. It includes a custom hero section, project highlights, experience, writing, resume access, and contact links.
 
-1. Replace the highlighted placeholder text across the HTML files.
-2. Replace `assets/images/profile-portrait.svg` with your own photo.
-3. Replace `assets/files/junhao-resume-template.pdf` with your real resume PDF.
-4. Update your email, GitHub, and LinkedIn links in:
-   - `index.html`
-   - `contact.html`
-   - `experience.html`
-5. Host the folder on GitHub Pages or any static hosting service.
+## Pages
 
-## Resume PDF Regeneration
+- `index.html`: landing page and hero section
+- `about.html`: background, education, and profile details
+- `projects.html`: selected project work
+- `resume.html`: resume page
+- `writing.html`: writing and reflections
+- `contact.html`: contact links and outreach info
 
-If you delete the placeholder PDF and want to regenerate it:
+## Structure
+
+- `assets/css/styles.css`: global styles and visual system
+- `assets/js/main.js`: hero interactions, motion, and page behavior
+- `assets/images/`: image and icon assets
+- `assets/resume.pdf`: current resume file
+
+## Local Preview
+
+Because this is a static site, you can open `index.html` directly in a browser or serve the folder locally with any static server.
+
+Example:
 
 ```bash
-node scripts/generate-resume.mjs
+python -m http.server 8000
 ```
 
-## GitHub Pages
+Then open `http://localhost:8000`.
 
-If you upload this project to a GitHub repository:
+## Deployment
 
-1. Push the files to the repository.
-2. In GitHub, open `Settings > Pages`.
-3. Set the source to `Deploy from a branch`.
-4. Choose your main branch and the root folder.
-5. Save and wait for the published URL.
+The site is deployed with GitHub Pages at:
+
+[https://rukaatre1.github.io/Harley-Studio/](https://rukaatre1.github.io/Harley-Studio/)
