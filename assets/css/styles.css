@@ -669,9 +669,192 @@ ul {
 }
 
 .about-layout {
+  position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 360px);
-  gap: 24px;
+  grid-template-columns: minmax(320px, 380px) minmax(0, 1fr);
+  gap: clamp(28px, 5vw, 72px);
+  align-items: start;
+}
+
+.about-linkmap {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+
+.about-layout.is-linked .about-linkmap {
+  opacity: 1;
+}
+
+.about-linkmap__glow,
+.about-linkmap__path {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.about-linkmap__glow {
+  stroke: rgba(246, 194, 173, 0.18);
+  stroke-width: 9;
+  filter: blur(5px);
+}
+
+.about-linkmap__path {
+  stroke: rgba(246, 194, 173, 0.82);
+  stroke-width: 1.45;
+  stroke-dasharray: 8 7;
+}
+
+.about-linkmap__node {
+  fill: #f6c2ad;
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+
+.about-layout.is-linked .about-linkmap__node {
+  opacity: 1;
+}
+
+.about-profile {
+  display: grid;
+  gap: 28px;
+  align-content: start;
+  position: relative;
+  z-index: 1;
+}
+
+.about-profile__identity {
+  display: grid;
+  gap: 8px;
+}
+
+.about-profile__school {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.3rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+
+.about-profile__line {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+  white-space: nowrap;
+}
+
+.about-focus {
+  display: grid;
+  gap: 14px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.about-focus__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 14px;
+}
+
+.about-focus__button {
+  appearance: none;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  font-family: var(--font-display);
+  font-size: clamp(1.42rem, 2.2vw, 1.78rem);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  color: rgba(220, 231, 246, 0.86);
+  text-align: left;
+  cursor: pointer;
+  transition:
+    color 180ms ease,
+    transform 180ms ease,
+    text-shadow 180ms ease;
+}
+
+.about-focus__button:hover,
+.about-focus__button:focus-visible,
+.about-focus__button.is-active {
+  color: #f5f8ff;
+  transform: translateX(8px);
+  text-shadow: 0 0 22px rgba(246, 194, 173, 0.09);
+}
+
+.about-focus__button:focus-visible {
+  outline: none;
+}
+
+.about-narrative {
+  display: grid;
+  gap: 18px;
+  align-content: start;
+  position: relative;
+  z-index: 1;
+}
+
+.about-sequence {
+  margin: 2px 0 0;
+  padding: 0;
+  display: grid;
+  list-style: none;
+  counter-reset: about-sequence;
+}
+
+.about-sequence li {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+  padding: 22px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  counter-increment: about-sequence;
+  transition:
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.about-sequence li::before {
+  content: "0" counter(about-sequence);
+  font-family: var(--font-display);
+  font-size: 1.46rem;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: rgba(246, 194, 173, 0.88);
+  transition:
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.about-sequence p {
+  margin: 0;
+  max-width: 60ch;
+  color: var(--muted);
+  line-height: 1.72;
+  transition: color 180ms ease;
+}
+
+.about-sequence li.is-active {
+  border-top-color: rgba(246, 194, 173, 0.18);
+  transform: translateX(4px);
+}
+
+.about-sequence li.is-active::before {
+  color: #f6c2ad;
+  transform: translateX(4px);
+}
+
+.about-sequence li.is-active p {
+  color: #e7eef9;
 }
 
 .prose-card,
@@ -1062,6 +1245,14 @@ ul {
   .contact-grid {
     grid-template-columns: 1fr;
   }
+
+  .about-layout {
+    gap: 28px;
+  }
+
+  .about-linkmap {
+    display: none;
+  }
 }
 
 @media (max-width: 720px) {
@@ -1180,6 +1371,24 @@ ul {
     grid-template-columns: 1fr 1fr;
     column-gap: 10px;
     row-gap: 7px;
+  }
+
+  .about-sequence li {
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 14px;
+    padding: 18px 0;
+  }
+
+  .about-sequence li::before {
+    font-size: 1.22rem;
+  }
+
+  .about-focus__button {
+    font-size: 1.24rem;
+  }
+
+  .about-profile__line {
+    white-space: normal;
   }
 
   .intro-card__title {

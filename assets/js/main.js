@@ -71,6 +71,104 @@ window.addEventListener("hashchange", () => {
   activateNav(window.location.hash ? window.location.hash.replace("#", "") : "home");
 });
 
+const aboutLayout = document.querySelector(".about-layout");
+const aboutLinkSvg = aboutLayout?.querySelector(".about-linkmap");
+const aboutLinkGlow = aboutLinkSvg?.querySelector(".about-linkmap__glow");
+const aboutLinkPath = aboutLinkSvg?.querySelector(".about-linkmap__path");
+const aboutLinkNode = aboutLinkSvg?.querySelector(".about-linkmap__node");
+const aboutButtons = aboutLayout
+  ? Array.from(aboutLayout.querySelectorAll("[data-about-link]"))
+  : [];
+const aboutPanels = aboutLayout
+  ? new Map(
+      Array.from(aboutLayout.querySelectorAll("[data-about-panel]"), (panel) => [
+        panel.dataset.aboutPanel,
+        panel,
+      ]),
+    )
+  : new Map();
+
+if (aboutLayout && aboutLinkSvg && aboutLinkGlow && aboutLinkPath && aboutLinkNode) {
+  let activeAboutKey = "";
+
+  const setAboutViewBox = () => {
+    const bounds = aboutLayout.getBoundingClientRect();
+    aboutLinkSvg.setAttribute("viewBox", `0 0 ${Math.max(1, bounds.width)} ${Math.max(1, bounds.height)}`);
+  };
+
+  const clearAboutActive = () => {
+    activeAboutKey = "";
+    aboutLayout.classList.remove("is-linked");
+    aboutButtons.forEach((button) => button.classList.remove("is-active"));
+    aboutPanels.forEach((panel) => panel.classList.remove("is-active"));
+  };
+
+  const drawAboutLink = (key) => {
+    const trigger = aboutButtons.find((button) => button.dataset.aboutLink === key);
+    const panel = aboutPanels.get(key);
+    if (!trigger || !panel || window.innerWidth <= 900) {
+      clearAboutActive();
+      return;
+    }
+
+    activeAboutKey = key;
+    setAboutViewBox();
+
+    aboutButtons.forEach((button) => {
+      button.classList.toggle("is-active", button === trigger);
+    });
+    aboutPanels.forEach((linkedPanel, panelKey) => {
+      linkedPanel.classList.toggle("is-active", panelKey === key);
+    });
+    aboutLayout.classList.add("is-linked");
+
+    const layoutRect = aboutLayout.getBoundingClientRect();
+    const triggerRect = trigger.getBoundingClientRect();
+    const panelRect = panel.getBoundingClientRect();
+
+    const startX = triggerRect.right - layoutRect.left + 10;
+    const startY = triggerRect.top - layoutRect.top + triggerRect.height / 2;
+    const endX = panelRect.left - layoutRect.left + 12;
+    const endY = panelRect.top - layoutRect.top + panelRect.height / 2;
+    const elbowX = Math.max(startX + 28, Math.min(startX + (endX - startX) * 0.34, endX - 26));
+    const pathData = `M ${startX} ${startY} L ${elbowX} ${startY} L ${elbowX} ${endY} L ${endX} ${endY}`;
+
+    aboutLinkGlow.setAttribute("d", pathData);
+    aboutLinkPath.setAttribute("d", pathData);
+    aboutLinkNode.setAttribute("cx", `${endX}`);
+    aboutLinkNode.setAttribute("cy", `${endY}`);
+  };
+
+  aboutButtons.forEach((button) => {
+    const key = button.dataset.aboutLink;
+    button.addEventListener("mouseenter", () => drawAboutLink(key));
+    button.addEventListener("focus", () => drawAboutLink(key));
+  });
+
+  aboutPanels.forEach((panel, key) => {
+    panel.addEventListener("mouseenter", () => drawAboutLink(key));
+    panel.addEventListener("focusin", () => drawAboutLink(key));
+  });
+
+  aboutLayout.addEventListener("mouseleave", () => {
+    clearAboutActive();
+  });
+
+  aboutLayout.addEventListener("focusout", (event) => {
+    if (!aboutLayout.contains(event.relatedTarget)) {
+      clearAboutActive();
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (activeAboutKey) {
+      drawAboutLink(activeAboutKey);
+    }
+  });
+
+  setAboutViewBox();
+}
+
 const heroPlanet = document.querySelector(".hero-planet");
 const finePointer = window.matchMedia("(pointer: fine)").matches;
 const heroTraceSvg = heroPlanet?.querySelector(".hero-traces");

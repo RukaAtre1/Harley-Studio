@@ -172,44 +172,65 @@
       </section>
 
       <section class="section-shell reveal" id="about" data-section="about">
-        <div class="section-heading">
-          <p class="eyebrow">About</p>
-          <h2>Grounded systems over empty demos.</h2>
-        </div>
-
         <div class="about-layout">
-          <article class="prose-card">
-            <p>
-              I'm a UCLA student majoring in Statistics and Data Science, with a minor in Data
-              Science Engineering. Across research, internships, and independent projects, I'm most
-              interested in turning technical capability into systems that people can actually use
-              and verify.
-            </p>
-            <p>
-              What I care about most is not just whether a model can generate something impressive,
-              but whether its outputs remain grounded, interpretable, and trustworthy in real
-              workflows. That perspective shapes how I think about AI in learning, data products,
-              and creative tools.
-            </p>
-          </article>
+          <svg class="about-linkmap" aria-hidden="true">
+            <path class="about-linkmap__glow"></path>
+            <path class="about-linkmap__path"></path>
+            <circle class="about-linkmap__node" r="4"></circle>
+          </svg>
 
-          <div class="detail-stack">
-            <article class="detail-card detail-card--accent">
-              <p class="detail-card__label">Education</p>
-              <h3>UCLA</h3>
-              <p>B.S. in Statistics and Data Science</p>
-            </article>
-            <article class="detail-card">
-              <p class="detail-card__label">Current Focus</p>
-              <h3>Grounded AI</h3>
-              <p>Usable workflows, interpretable outputs, product-level trust.</p>
-            </article>
-            <article class="detail-card">
-              <p class="detail-card__label">Timeline</p>
-              <h3>Expected June 2026</h3>
-              <p>Minor in Data Science Engineering.</p>
-            </article>
-          </div>
+          <aside class="about-profile" aria-label="Profile">
+            <div class="about-profile__identity">
+              <p class="about-profile__school">UCLA &rsquo;26</p>
+              <p class="about-profile__line">B.S. in Statistics and Data Science</p>
+              <p class="about-profile__line">Minor in Data Science Engineering</p>
+            </div>
+
+            <div class="about-focus" aria-label="Focus Areas">
+              <p class="eyebrow">Focus Areas</p>
+              <ul class="about-focus__list">
+                <li>
+                  <button class="about-focus__button" type="button" data-about-link="agents">
+                    AI Agents
+                  </button>
+                </li>
+                <li>
+                  <button class="about-focus__button" type="button" data-about-link="media">
+                    Computational Media
+                  </button>
+                </li>
+                <li>
+                  <button class="about-focus__button" type="button" data-about-link="grounded">
+                    Grounded Systems
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </aside>
+
+          <article class="about-narrative">
+            <p class="eyebrow">ABOUT</p>
+            <ol class="about-sequence">
+              <li data-about-panel="agents">
+                <p>
+                  Built systems like FishCapsule to turn documents into structured,
+                  source-grounded learning workflows.
+                </p>
+              </li>
+              <li data-about-panel="media">
+                <p>
+                  Worked across audio, image generation, and math-based code art to create
+                  expressive computational experiences.
+                </p>
+              </li>
+              <li data-about-panel="grounded">
+                <p>
+                  Focused on building AI tools that are interpretable, controllable, and reliable
+                  under real use.
+                </p>
+              </li>
+            </ol>
+          </article>
         </div>
       </section>
 
