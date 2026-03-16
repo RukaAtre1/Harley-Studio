@@ -1,112 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About | Junhao Jia</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <nav class="nav">
-    <div class="nav-inner">
-      <div class="brand">Junhao Jia</div>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a class="active" href="about.html">About</a>
-        <a href="projects.html">Projects</a>
-        <a href="resume.html">Resume</a>
-        <a href="contact.html">Contact</a>
-      </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="About page for a professional personal website."
+    />
+    <title>About | Junhao</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/main.js" defer></script>
+  </head>
+  <body data-page="about">
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand-mark" href="index.html">
+          <span class="brand-mark__eyebrow">Personal Website</span>
+          <span class="brand-mark__name">Junhao</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Open menu">
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="index.html" data-nav="home">Home</a>
+          <a href="about.html" data-nav="about">About</a>
+          <a href="resume.html" data-nav="resume">Experience</a>
+          <a href="projects.html" data-nav="projects">Projects</a>
+          <a href="contact.html" data-nav="contact">Contact</a>
+          <a class="button button--small" href="assets/resume.pdf" target="_blank" rel="noreferrer">Resume PDF</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="page-intro reveal">
+          <p class="section-label">About Me</p>
+          <h1>A clear personal introduction with education, interests, and professional direction.</h1>
+          <p class="lead">
+            Use this page to answer the questions a recruiter or collaborator will naturally have first:
+            who you are, what you study, what kind of work energizes you, and what you want to do next.
+          </p>
+        </section>
+
+        <section class="section split-section reveal">
+          <div class="split-section__main">
+            <div class="section-heading">
+              <div>
+                <p class="section-label">Personal Description</p>
+                <h2>Brief, confident, and readable.</h2>
+              </div>
+            </div>
+            <div class="rich-card">
+              <p>
+                I am a student with a growing interest in using quantitative tools to make complex ideas
+                easier to understand and act on. I enjoy moving between careful analysis and polished
+                presentation: framing a question, cleaning data, evaluating evidence, and then shaping the
+                final result into something another person can quickly trust.
+              </p>
+              <p>
+                My interests currently include statistical thinking, product-minded analytics, clear writing,
+                and building digital experiences that feel intentional rather than generic. I am especially
+                drawn to work that requires both rigor and taste.
+              </p>
+            </div>
+          </div>
+
+          <aside class="split-section__side">
+            <div class="panel-card">
+              <p class="section-label">Quick Facts</p>
+              <ul class="meta-list meta-list--stacked">
+                <li><strong>Name</strong><span>Junhao <span class="placeholder">[Add Last Name]</span></span></li>
+                <li><strong>School</strong><span class="placeholder">[Your University]</span></li>
+                <li><strong>Major</strong><span class="placeholder">[Your Major / Degree]</span></li>
+                <li><strong>Graduation</strong><span class="placeholder">[Expected Month Year]</span></li>
+              </ul>
+            </div>
+          </aside>
+        </section>
+
+        <section class="section reveal">
+          <div class="section-heading">
+            <div>
+              <p class="section-label">Education</p>
+              <h2>The required academic details, presented cleanly.</h2>
+            </div>
+          </div>
+          <div class="education-card">
+            <div>
+              <h3><span class="placeholder">[Your University]</span></h3>
+              <p class="education-card__subline">
+                <span class="placeholder">[Degree / Major]</span> | Expected Graduation:
+                <span class="placeholder">[Month Year]</span>
+              </p>
+            </div>
+            <div class="coursework-block">
+              <p class="coursework-block__label">Relevant Coursework</p>
+              <div class="tag-cloud">
+                <span class="tag">Probability</span>
+                <span class="tag">Statistical Inference</span>
+                <span class="tag">Regression</span>
+                <span class="tag">Data Structures</span>
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Experimental Design</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section reveal">
+          <div class="section-heading">
+            <div>
+              <p class="section-label">How I Work</p>
+              <h2>Values that shape my projects and collaboration style.</h2>
+            </div>
+          </div>
+          <div class="feature-grid">
+            <article class="feature-card">
+              <h3>Clarity First</h3>
+              <p>I care about making technical work legible to other people, not just correct on paper.</p>
+            </article>
+            <article class="feature-card">
+              <h3>Structured Curiosity</h3>
+              <p>I like asking ambitious questions, then breaking them into calm, testable pieces.</p>
+            </article>
+            <article class="feature-card">
+              <h3>Polished Execution</h3>
+              <p>Details matter. Good spacing, clean writing, and thoughtful organization change how work is received.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section reveal">
+          <div class="section-heading">
+            <div>
+              <p class="section-label">Interests</p>
+              <h2>Optional details that add personality without clutter.</h2>
+            </div>
+          </div>
+          <div class="feature-grid">
+            <article class="feature-card">
+              <h3>Professional Interests</h3>
+              <p>Analytics, experimentation, dashboard design, reproducible research, and clear technical communication.</p>
+            </article>
+            <article class="feature-card">
+              <h3>Creative Interests</h3>
+              <p>Editorial layouts, thoughtful interface design, and building presentations that feel calm and premium.</p>
+            </article>
+            <article class="feature-card">
+              <h3>Community</h3>
+              <p>Mentoring, teaching, or student leadership can fit well here if you want to show teamwork and initiative.</p>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>Need the short version? The home page covers the essentials in under a minute.</p>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="resume.html">Experience</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </footer>
     </div>
-  </nav>
-
-  <main class="container">
-    <section class="section">
-      <div class="section-header">
-        <h2>About me</h2>
-        <p class="section-note">Who I am, what I study, and what I am trying to build.</p>
-      </div>
-      <div class="panel">
-        <p class="muted">
-          I am a UCLA student majoring in Statistics and Data Science and minoring in Data Science Engineering,
-          with a growing focus on AI systems that have to work under real human and organizational constraints.
-          I’m less interested in isolated model performance than in what happens after deployment: whether outputs
-          are grounded, whether users can verify them, and whether the product deserves long-term trust.
-        </p>
-        <p class="muted">
-          My recent work has concentrated on educational AI, creative AI, and data-centric infrastructure. Across these domains,
-          I keep returning to the same question: how do we turn fragmented signals into reliable decisions or useful interfaces?
-        </p>
-        <div class="tag-list">
-          <span class="tag">AI systems</span>
-          <span class="tag">data science</span>
-          <span class="tag">education technology</span>
-          <span class="tag">creative tools</span>
-          <span class="tag">product-minded engineering</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-header">
-        <h2>Education</h2>
-        <p class="section-note">Foundations first, then systems.</p>
-      </div>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="item-top">
-            <strong>University of California, Los Angeles</strong>
-            <span>Expected June 2026</span>
-          </div>
-          <div class="muted">B.S. in Statistics and Data Science, Minor in Data Science Engineering | GPA: 3.674/4.00</div>
-          <ul class="clean">
-            <li>Relevant coursework: Machine Learning, Data Mining, Regression & Linear Models, Monte Carlo Methods, Computational Statistics, Optimization for Statistics, Probability, Python with Applications.</li>
-            <li>Current direction: AI product systems, trustworthy LLM workflows, and data-driven decision tools.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="experience" class="section">
-      <div class="section-header">
-        <h2>Experience</h2>
-        <p class="section-note">Research and industry work that shaped my technical judgment.</p>
-      </div>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="item-top">
-            <strong>Undergraduate Researcher, UCLA</strong>
-            <span>Sep 2025 – Present</span>
-          </div>
-          <div class="muted">Music-Driven Generative Art, supervised by Prof. Jiayin Lu</div>
-          <ul class="clean">
-            <li>Built a music-conditioned generative system mapping audio features into parametric spirograph curves.</li>
-            <li>Implemented a reproducible audio → geometry → pixels → video pipeline with deterministic frame synthesis.</li>
-            <li>Helped create teaching materials that make representation design in generative systems more visible and interpretable.</li>
-          </ul>
-        </div>
-
-        <div class="timeline-item">
-          <div class="item-top">
-            <strong>PLM Data Analytics Intern, Techtronic Industries</strong>
-            <span>Jul 2025 – Aug 2025</span>
-          </div>
-          <div class="muted">Dongguan, China</div>
-          <ul class="clean">
-            <li>Analyzed 6.18M+ usage logs and 14,624 user records using Pandas and SQL.</li>
-            <li>Built ETL pipelines integrating Teamcenter and OpenLM data to resolve fragmented records and mismatched permission mappings.</li>
-            <li>Developed automated reporting workflows that reduced manual effort and supported license optimization decisions with measurable cost impact.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-inner">
-      <span>Junhao Jia</span>
-      <span>About / Education / Experience</span>
-    </div>
-  </footer>
-</body>
+  </body>
 </html>

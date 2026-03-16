@@ -1,24 +1,43 @@
-# Junhao Jia Personal Website
+# Personal Website
 
-A clean multi-page static site suitable for GitHub Pages and coursework submission.
+This project is a polished multi-page personal website starter for the STATS 140XP final project.
 
-## Files
-- `index.html` - homepage
-- `about.html` - about, education, experience
-- `projects.html` - project portfolio
-- `resume.html` - embedded/downloadable resume PDF
-- `contact.html` - contact links
-- `styles.css` - shared styling
-- `assets/resume.pdf` - resume file
+## Included
 
-## To publish on GitHub Pages
-1. Create a public GitHub repository.
-2. Upload all files in this folder.
-3. In GitHub repo settings, go to **Pages**.
-4. Set source to the `main` branch and root folder `/`.
-5. Save and wait for the site to deploy.
+- `index.html`: strong landing page with a quick professional summary
+- `about.html`: personal description, education, interests, and values
+- `experience.html`: timeline plus embedded PDF resume
+- `projects.html`: portfolio cards with problem / contribution / tools structure
+- `contact.html`: email, profile links, and resume access
+- `assets/css/styles.css`: full visual system and responsive layout
+- `assets/images/profile-portrait.svg`: replace with your real headshot
+- `assets/files/junhao-resume-template.pdf`: replace with your actual resume PDF
 
-## To fully satisfy the course rubric
-- Replace the placeholder block on `index.html` with a real headshot image.
-- Check all external links after deployment.
-- Optionally add a dedicated `photo.jpg` in `assets/` and update the homepage.
+## Fast Personalization
+
+1. Replace the highlighted placeholder text across the HTML files.
+2. Replace `assets/images/profile-portrait.svg` with your own photo.
+3. Replace `assets/files/junhao-resume-template.pdf` with your real resume PDF.
+4. Update your email, GitHub, and LinkedIn links in:
+   - `index.html`
+   - `contact.html`
+   - `experience.html`
+5. Host the folder on GitHub Pages or any static hosting service.
+
+## Resume PDF Regeneration
+
+If you delete the placeholder PDF and want to regenerate it:
+
+```bash
+node scripts/generate-resume.mjs
+```
+
+## GitHub Pages
+
+If you upload this project to a GitHub repository:
+
+1. Push the files to the repository.
+2. In GitHub, open `Settings > Pages`.
+3. Set the source to `Deploy from a branch`.
+4. Choose your main branch and the root folder.
+5. Save and wait for the published URL.

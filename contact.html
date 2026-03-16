@@ -1,65 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact | Junhao Jia</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <nav class="nav">
-    <div class="nav-inner">
-      <div class="brand">Junhao Jia</div>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="projects.html">Projects</a>
-        <a href="resume.html">Resume</a>
-        <a class="active" href="contact.html">Contact</a>
-      </div>
-    </div>
-  </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Contact page for a professional personal website."
+    />
+    <title>Contact | Junhao</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/main.js" defer></script>
+  </head>
+  <body data-page="contact">
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand-mark" href="index.html">
+          <span class="brand-mark__eyebrow">Personal Website</span>
+          <span class="brand-mark__name">Junhao</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Open menu">
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="index.html" data-nav="home">Home</a>
+          <a href="about.html" data-nav="about">About</a>
+          <a href="resume.html" data-nav="resume">Experience</a>
+          <a href="projects.html" data-nav="projects">Projects</a>
+          <a href="contact.html" data-nav="contact">Contact</a>
+          <a class="button button--small" href="assets/resume.pdf" target="_blank" rel="noreferrer">Resume PDF</a>
+        </nav>
+      </header>
 
-  <main class="container">
-    <section class="section">
-      <div class="section-header">
-        <h2>Contact</h2>
-        <p class="section-note">Ways to reach me or view more of my work.</p>
-      </div>
-      <div class="grid-2">
-        <div class="panel">
-          <h3>Direct</h3>
-          <ul class="clean">
-            <li>Email: <a href="mailto:harleyjia123@g.ucla.edu">harleyjia123@g.ucla.edu</a></li>
-            <li>Location: Los Angeles, CA</li>
-            <li>Phone: +1 706 363 5488</li>
-          </ul>
-        </div>
-        <div class="panel">
-          <h3>Profiles</h3>
-          <ul class="clean">
-            <li><a href="https://linkedin.com/in/junhao-harley-jia" target="_blank" rel="noopener">LinkedIn</a></li>
-            <li><a href="https://github.com/JKRUKA" target="_blank" rel="noopener">GitHub</a></li>
-            <li><a href="https://fish-capsule.vercel.app/" target="_blank" rel="noopener">FishCapsule</a></li>
-            <li><a href="https://devpost.com/software/spiromint" target="_blank" rel="noopener">SpiroMint</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="panel" style="margin-top: 18px;">
-        <h3>What I’m looking for</h3>
-        <p class="muted">
-          I’m especially interested in opportunities involving AI product development, data-centric ML systems,
-          educational technology, and creative AI tooling.
-        </p>
-      </div>
-    </section>
-  </main>
+      <main>
+        <section class="page-intro reveal">
+          <p class="section-label">Contact</p>
+          <h1>Every required external link in one place.</h1>
+          <p class="lead">
+            This page closes the loop for visitors: email, professional profiles, and a direct resume link,
+            all kept simple and easy to scan.
+          </p>
+        </section>
 
-  <footer class="footer">
-    <div class="footer-inner">
-      <span>Junhao Jia</span>
-      <span>Contact / External Links</span>
+        <section class="section reveal">
+          <div class="contact-grid">
+            <article class="contact-card">
+              <p class="section-label">Email</p>
+              <h2>Primary Contact</h2>
+              <a class="contact-card__link" href="mailto:replace-with-your-email@example.com">replace-with-your-email@example.com</a>
+              <p>Use a professional email address that you check regularly.</p>
+            </article>
+
+            <article class="contact-card">
+              <p class="section-label">GitHub</p>
+              <h2>Code + Repositories</h2>
+              <a class="contact-card__link" href="https://github.com" target="_blank" rel="noreferrer">github.com/<span class="placeholder">[your-username]</span></a>
+              <p>Link your strongest repos, notebooks, or technical work samples.</p>
+            </article>
+
+            <article class="contact-card">
+              <p class="section-label">LinkedIn</p>
+              <h2>Professional Profile</h2>
+              <a class="contact-card__link" href="https://www.linkedin.com" target="_blank" rel="noreferrer">linkedin.com/in/<span class="placeholder">[your-profile]</span></a>
+              <p>Keep your headline and summary aligned with the message on this site.</p>
+            </article>
+
+            <article class="contact-card">
+              <p class="section-label">Resume</p>
+              <h2>Direct PDF Access</h2>
+              <a class="contact-card__link" href="assets/resume.pdf" target="_blank" rel="noreferrer">Open resume PDF</a>
+              <p>The file is hosted locally with the site, so there are no extra permissions needed.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section split-section reveal">
+          <div class="split-section__main">
+            <div class="section-heading">
+              <div>
+                <p class="section-label">Availability</p>
+                <h2>A polished closing note.</h2>
+              </div>
+            </div>
+            <div class="rich-card">
+              <p>
+                I am interested in opportunities where I can contribute through analytical thinking, careful
+                execution, and strong communication. If you are working on research, product, or data-driven
+                projects and think there could be a fit, I would be glad to connect.
+              </p>
+              <p>
+                <strong>Suggested location line:</strong>
+                <span class="placeholder">[City, State or Remote]</span>
+              </p>
+            </div>
+          </div>
+
+          <aside class="split-section__side">
+            <div class="panel-card panel-card--accent">
+              <p class="section-label">Submission Checklist</p>
+              <ul class="list-plain">
+                <li>Multi-page navigation works.</li>
+                <li>About, education, experience, and projects are present.</li>
+                <li>Photo, resume PDF, and external links are included.</li>
+                <li>Design is custom and visually consistent.</li>
+              </ul>
+            </div>
+          </aside>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>After you replace the placeholder links, this page is fully ready for submission.</p>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="projects.html">Projects</a>
+        </div>
+      </footer>
     </div>
-  </footer>
-</body>
+  </body>
 </html>

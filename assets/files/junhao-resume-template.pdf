@@ -1,0 +1,88 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 5 0 R /F2 6 0 R >> >> /Contents 4 0 R >>
+endobj
+4 0 obj
+<< /Length 1346 >>
+stream
+BT
+/F2 24 Tf
+1 0 0 1 72 740 Tm
+(Junhao Resume Template) Tj
+/F1 11 Tf
+1 0 0 1 72 718 Tm
+(Replace this file with your actual resume PDF before you submit the site.) Tj
+/F2 13 Tf
+1 0 0 1 72 678 Tm
+(Header) Tj
+/F1 11 Tf
+1 0 0 1 72 658 Tm
+(Name | Professional email | Phone | LinkedIn | GitHub | City, State) Tj
+/F2 13 Tf
+1 0 0 1 72 624 Tm
+(Education) Tj
+/F1 11 Tf
+1 0 0 1 72 604 Tm
+(University, Degree / Major, Expected Graduation) Tj
+/F1 11 Tf
+1 0 0 1 72 586 Tm
+(Add relevant coursework, GPA, honors, or scholarships if helpful.) Tj
+/F2 13 Tf
+1 0 0 1 72 552 Tm
+(Experience) Tj
+/F1 11 Tf
+1 0 0 1 72 532 Tm
+(Role, Organization, Dates - 2 to 4 bullets focused on contribution and impact.) Tj
+/F1 11 Tf
+1 0 0 1 72 514 Tm
+(Use strong verbs and keep each bullet concise and outcome-oriented.) Tj
+/F2 13 Tf
+1 0 0 1 72 480 Tm
+(Projects) Tj
+/F1 11 Tf
+1 0 0 1 72 460 Tm
+(Project title, tools, and a short summary of problem, approach, and result.) Tj
+/F1 11 Tf
+1 0 0 1 72 442 Tm
+(Add repo, report, dashboard, or demo links when possible.) Tj
+/F2 13 Tf
+1 0 0 1 72 408 Tm
+(Skills) Tj
+/F1 11 Tf
+1 0 0 1 72 388 Tm
+(Programming, data tools, visualization, and communication strengths.) Tj
+/F2 13 Tf
+1 0 0 1 72 354 Tm
+(Reminder) Tj
+/F1 11 Tf
+1 0 0 1 72 334 Tm
+(If you already have a polished resume, replace this template directly and keep the same filename.) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000001649 00000 n 
+0000001719 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+1794
+%%EOF

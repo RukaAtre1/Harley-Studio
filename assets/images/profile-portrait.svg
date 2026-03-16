@@ -1,0 +1,21 @@
+<svg width="900" height="1100" viewBox="0 0 900 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="1100" rx="56" fill="#F6EFE7"/>
+  <circle cx="142" cy="164" r="132" fill="#FFF9F1" fill-opacity="0.95"/>
+  <circle cx="734" cy="192" r="166" fill="#D26A45" fill-opacity="0.12"/>
+  <circle cx="764" cy="942" r="198" fill="#2F6B65" fill-opacity="0.14"/>
+  <rect x="82" y="78" width="736" height="944" rx="44" fill="url(#paint0_linear)"/>
+  <path d="M450 274C531.843 274 598 340.157 598 422V478C598 559.843 531.843 626 450 626C368.157 626 302 559.843 302 478V422C302 340.157 368.157 274 450 274Z" fill="#1F241F"/>
+  <path d="M239 870C239 742.975 341.975 640 469 640H431C558.025 640 661 742.975 661 870V920H239V870Z" fill="#1F241F"/>
+  <circle cx="450" cy="430" r="112" fill="#F6EFE7"/>
+  <path d="M318 454C318 380.993 377.993 321 451 321C524.007 321 584 380.993 584 454V489C584 562.007 524.007 622 451 622C377.993 622 318 562.007 318 489V454Z" fill="#F3DED1"/>
+  <path d="M341 454C353.894 393.288 398.282 358 451 358C503.718 358 548.106 393.288 561 454" stroke="#1F241F" stroke-width="24" stroke-linecap="round"/>
+  <path d="M345 921C351.221 803.994 423.324 743 450 743C476.676 743 548.779 803.994 555 921" stroke="#F6EFE7" stroke-width="18" stroke-linecap="round"/>
+  <rect x="132" y="112" width="266" height="42" rx="21" fill="#FFF9F1"/>
+  <text x="160" y="139" fill="#9F4527" font-family="Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="2">REPLACE WITH YOUR HEADSHOT</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="160" y1="146" x2="756" y2="982" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF9F1"/>
+      <stop offset="1" stop-color="#F1E7DA"/>
+    </linearGradient>
+  </defs>
+</svg>

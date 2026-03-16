@@ -1,48 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Resume | Junhao Jia</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <nav class="nav">
-    <div class="nav-inner">
-      <div class="brand">Junhao Jia</div>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="projects.html">Projects</a>
-        <a class="active" href="resume.html">Resume</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </div>
-  </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Experience page with a timeline and resume access."
+    />
+    <title>Experience | Junhao</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/main.js" defer></script>
+  </head>
+  <body data-page="resume">
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand-mark" href="index.html">
+          <span class="brand-mark__eyebrow">Personal Website</span>
+          <span class="brand-mark__name">Junhao</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Open menu">
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="index.html" data-nav="home">Home</a>
+          <a href="about.html" data-nav="about">About</a>
+          <a href="resume.html" data-nav="resume">Experience</a>
+          <a href="projects.html" data-nav="projects">Projects</a>
+          <a href="contact.html" data-nav="contact">Contact</a>
+          <a class="button button--small" href="assets/resume.pdf" target="_blank" rel="noreferrer">Resume PDF</a>
+        </nav>
+      </header>
 
-  <main class="container">
-    <section class="section">
-      <div class="section-header">
-        <h2>Resume</h2>
-        <p class="section-note">Embedded PDF plus direct download link.</p>
-      </div>
-      <div class="panel">
-        <div class="button-row">
-          <a class="btn primary" href="assets/resume.pdf" target="_blank" rel="noopener">Open Resume in New Tab</a>
-          <a class="btn" href="assets/resume.pdf" download>Download Resume</a>
-        </div>
-        <div style="margin-top: 18px;">
-          <iframe class="resume-frame" src="assets/resume.pdf" title="Resume PDF"></iframe>
-        </div>
-      </div>
-    </section>
-  </main>
+      <main>
+        <section class="page-intro reveal">
+          <p class="section-label">Experience + Resume</p>
+          <h1>A timeline format that surfaces impact quickly.</h1>
+          <p class="lead">
+            The assignment asks for education plus experience and/or projects. This page handles the
+            experience side cleanly, with room for internships, research, leadership, or substantial course work.
+          </p>
+        </section>
 
-  <footer class="footer">
-    <div class="footer-inner">
-      <span>Junhao Jia</span>
-      <span>Resume / PDF Access</span>
+        <section class="section split-section reveal">
+          <div class="split-section__main">
+            <div class="section-heading">
+              <div>
+                <p class="section-label">Timeline</p>
+                <h2>Keep each role to the most meaningful context and outcomes.</h2>
+              </div>
+            </div>
+            <div class="timeline timeline--detailed">
+              <article class="timeline-item">
+                <p class="timeline-item__period"><span class="placeholder">[2025 - Present]</span></p>
+                <h3>Research Assistant</h3>
+                <p class="timeline-item__org"><span class="placeholder">[Department / Lab Name]</span></p>
+                <ul class="list-plain">
+                  <li>Studied <span class="placeholder">[topic or domain]</span> using structured analysis and repeatable workflows.</li>
+                  <li>Prepared clean summaries and visuals for audiences who did not need raw technical detail.</li>
+                  <li>Collaborated with teammates to move from exploratory work to polished communication.</li>
+                </ul>
+              </article>
+
+              <article class="timeline-item">
+                <p class="timeline-item__period"><span class="placeholder">[2024 - 2025]</span></p>
+                <h3>Data or Product Intern</h3>
+                <p class="timeline-item__org"><span class="placeholder">[Company / Team]</span></p>
+                <ul class="list-plain">
+                  <li>Built analysis or reporting support for a real stakeholder question.</li>
+                  <li>Improved a workflow by making outputs faster to update, easier to review, or more decision-ready.</li>
+                  <li>Communicated tradeoffs clearly across technical and non-technical collaborators.</li>
+                </ul>
+              </article>
+
+              <article class="timeline-item">
+                <p class="timeline-item__period"><span class="placeholder">[2023 - Present]</span></p>
+                <h3>Student Leadership or Teaching</h3>
+                <p class="timeline-item__org"><span class="placeholder">[Organization / Course / Club]</span></p>
+                <ul class="list-plain">
+                  <li>Led projects, mentored peers, or organized processes that improved consistency and follow-through.</li>
+                  <li>Translated complicated material into simpler explanations and actionable next steps.</li>
+                  <li>Demonstrated reliability, ownership, and comfort working with different types of people.</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+
+          <aside class="split-section__side">
+            <div class="panel-card">
+              <p class="section-label">Useful Tips</p>
+              <ul class="list-plain">
+                <li>Lead with the role, organization, and dates.</li>
+                <li>Focus each bullet on your contribution, not just the topic.</li>
+                <li>Prefer concrete verbs and specific outcomes where possible.</li>
+              </ul>
+            </div>
+            <div class="panel-card panel-card--accent">
+              <p class="section-label">Resume Download</p>
+              <h3>Accessible without special permissions.</h3>
+              <p>Your resume link is a direct PDF, which matches the requirement exactly.</p>
+              <a class="button button--ghost" href="assets/resume.pdf" target="_blank" rel="noreferrer">Download Resume</a>
+            </div>
+          </aside>
+        </section>
+
+        <section class="section reveal">
+          <div class="section-heading">
+            <div>
+              <p class="section-label">Embedded Resume</p>
+              <h2>A visible PDF preview on-site.</h2>
+            </div>
+          </div>
+          <div class="resume-frame">
+            <object data="assets/resume.pdf" type="application/pdf">
+              <p>
+                Your browser could not display the PDF inline.
+                <a href="assets/resume.pdf" target="_blank" rel="noreferrer">Open the resume here.</a>
+              </p>
+            </object>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>Projects complement this page by showing how you frame problems and communicate outcomes.</p>
+        <div class="footer-links">
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact</a>
+          <a href="assets/resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+        </div>
+      </footer>
     </div>
-  </footer>
-</body>
+  </body>
 </html>

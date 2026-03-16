@@ -1,85 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projects | Junhao Jia</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <nav class="nav">
-    <div class="nav-inner">
-      <div class="brand">Junhao Jia</div>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a class="active" href="projects.html">Projects</a>
-        <a href="resume.html">Resume</a>
-        <a href="contact.html">Contact</a>
-      </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Projects page for a polished personal website."
+    />
+    <title>Projects | Junhao</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/main.js" defer></script>
+  </head>
+  <body data-page="projects">
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand-mark" href="index.html">
+          <span class="brand-mark__eyebrow">Personal Website</span>
+          <span class="brand-mark__name">Junhao</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Open menu">
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="index.html" data-nav="home">Home</a>
+          <a href="about.html" data-nav="about">About</a>
+          <a href="resume.html" data-nav="resume">Experience</a>
+          <a href="projects.html" data-nav="projects">Projects</a>
+          <a href="contact.html" data-nav="contact">Contact</a>
+          <a class="button button--small" href="assets/resume.pdf" target="_blank" rel="noreferrer">Resume PDF</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="page-intro reveal">
+          <p class="section-label">Projects / Portfolio</p>
+          <h1>Show how you think, not just what tools you know.</h1>
+          <p class="lead">
+            The strongest portfolio entries tell a quick story: the problem, your contribution, the tools,
+            and what the final output made possible. These cards are already structured that way.
+          </p>
+        </section>
+
+        <section class="section reveal">
+          <div class="project-grid project-grid--full">
+            <article class="project-card project-card--featured">
+              <p class="project-card__kicker">Featured Project</p>
+              <h2><span class="placeholder">[Project Title One]</span></h2>
+              <p class="project-card__summary">
+                Use this area for 1-2 strong sentences: what problem you tackled, why it mattered, and what
+                you personally owned from start to finish.
+              </p>
+              <div class="detail-grid">
+                <div>
+                  <p class="detail-grid__label">Problem</p>
+                  <p>Describe the core question, user need, or decision the project was built to support.</p>
+                </div>
+                <div>
+                  <p class="detail-grid__label">Contribution</p>
+                  <p>Explain what you designed, analyzed, coded, or communicated yourself.</p>
+                </div>
+                <div>
+                  <p class="detail-grid__label">Tools</p>
+                  <div class="tag-row">
+                    <span class="tag">Python</span>
+                    <span class="tag">SQL</span>
+                    <span class="tag">Visualization</span>
+                    <span class="tag">Storytelling</span>
+                  </div>
+                </div>
+                <div>
+                  <p class="detail-grid__label">Link</p>
+                  <a class="text-link" href="https://github.com" target="_blank" rel="noreferrer">Add repo or report link</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <p class="project-card__kicker">Project 02</p>
+              <h3><span class="placeholder">[Project Title Two]</span></h3>
+              <p>
+                A good second project usually contrasts with the first. If one project is technical, make
+                the next one more communication- or product-oriented.
+              </p>
+              <div class="tag-row">
+                <span class="tag">R</span>
+                <span class="tag">Dashboard</span>
+                <span class="tag">Experimentation</span>
+              </div>
+              <a class="text-link" href="https://github.com" target="_blank" rel="noreferrer">Replace with live link</a>
+            </article>
+
+            <article class="project-card">
+              <p class="project-card__kicker">Project 03</p>
+              <h3><span class="placeholder">[Project Title Three]</span></h3>
+              <p>
+                This card is ideal for a course project, capstone, personal analysis, or interactive write-up
+                with especially strong visuals.
+              </p>
+              <div class="tag-row">
+                <span class="tag">Quarto</span>
+                <span class="tag">Git</span>
+                <span class="tag">Communication</span>
+              </div>
+              <a class="text-link" href="https://github.com" target="_blank" rel="noreferrer">Replace with repo or demo</a>
+            </article>
+          </div>
+        </section>
+
+        <section class="section split-section reveal">
+          <div class="split-section__main">
+            <div class="section-heading">
+              <div>
+                <p class="section-label">What makes a project card strong</p>
+                <h2>Keep the signal high and the wording precise.</h2>
+              </div>
+            </div>
+            <div class="feature-grid">
+              <article class="feature-card">
+                <h3>Start with the problem</h3>
+                <p>The reader should understand why the work mattered before they see the tools.</p>
+              </article>
+              <article class="feature-card">
+                <h3>Name your contribution</h3>
+                <p>Be explicit about your role, especially in team work or class projects.</p>
+              </article>
+              <article class="feature-card">
+                <h3>Link to proof</h3>
+                <p>Attach a repo, report, dashboard, or write-up whenever you can.</p>
+              </article>
+            </div>
+          </div>
+
+          <aside class="split-section__side">
+            <div class="panel-card panel-card--accent">
+              <p class="section-label">Portfolio Goal</p>
+              <h3>Three strong entries are enough.</h3>
+              <p>You do not need many projects. You need a few that communicate taste, judgment, and follow-through.</p>
+            </div>
+          </aside>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>Need context first? Pair your projects with the personal story on the About page.</p>
+        <div class="footer-links">
+          <a href="about.html">About</a>
+          <a href="resume.html">Experience</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </footer>
     </div>
-  </nav>
-
-  <main class="container">
-    <section class="section">
-      <div class="section-header">
-        <h2>Selected projects</h2>
-        <p class="section-note">Problem, contribution, tools, and why each project matters.</p>
-      </div>
-      <div class="timeline">
-        <div id="fishcapsule" class="timeline-item">
-          <div class="item-top">
-            <strong>FishCapsule</strong>
-            <span>Jan 2026</span>
-          </div>
-          <div class="muted">AI-Powered Self-Study Platform</div>
-          <ul class="clean">
-            <li><strong>Problem:</strong> Many AI study tools answer quickly but drift away from source material, making learning less trustworthy.</li>
-            <li><strong>My contribution:</strong> Built an end-to-end study system that orchestrates syllabus ingestion, course mapping, slide selection, explanation, and persistent study sessions.</li>
-            <li><strong>Tools:</strong> Next.js, TypeScript, pdf.js, Zod, schema-first LLM workflows, caching and citation verification.</li>
-            <li><strong>Why it matters:</strong> This project sharpened my interest in grounded generation, controllability, and reliable human-facing AI systems.</li>
-          </ul>
-          <div class="tag-list"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">RAG</span><span class="tag">EdTech</span></div>
-        </div>
-
-        <div id="spiromint" class="timeline-item">
-          <div class="item-top">
-            <strong>SpiroMint</strong>
-            <span>Nov 2025</span>
-          </div>
-          <div class="muted">LIVE AI Best Coast 2025 | 3rd Place / 113 teams</div>
-          <ul class="clean">
-            <li><strong>Problem:</strong> Creative AI demos often look exciting but lack reproducibility and traceability.</li>
-            <li><strong>My contribution:</strong> Developed a browser-based system that transforms audio files into reproducible parametric animations with metadata export.</li>
-            <li><strong>Tools:</strong> JavaScript Canvas, Meyda, MusicTempo, client-side feature extraction, deterministic metadata pipelines.</li>
-            <li><strong>Why it matters:</strong> It taught me how to ship under pressure without sacrificing structural clarity.</li>
-          </ul>
-          <div class="tag-list"><span class="tag">JavaScript</span><span class="tag">audio features</span><span class="tag">creative AI</span><span class="tag">hackathon</span></div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="item-top">
-            <strong>Skin Cancer Classification</strong>
-            <span>Dec 2025</span>
-          </div>
-          <div class="muted">Kaggle Competition | Stats 101C</div>
-          <ul class="clean">
-            <li><strong>Problem:</strong> Build a stable machine learning pipeline on a 50,000-row dermatology dataset.</li>
-            <li><strong>My contribution:</strong> Built a full preprocessing and modeling workflow, compared multiple models under cross-validation, and selected a ridge-regularized logistic approach.</li>
-            <li><strong>Tools:</strong> Python, scikit-learn, logistic regression, random forest, XGBoost, ROC/AUC analysis.</li>
-            <li><strong>Why it matters:</strong> It reinforced the habit of choosing features and preprocessing based on stability, not leaderboard superstition.</li>
-          </ul>
-          <div class="tag-list"><span class="tag">ML pipeline</span><span class="tag">classification</span><span class="tag">cross-validation</span></div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-inner">
-      <span>Junhao Jia</span>
-      <span>Projects / Portfolio</span>
-    </div>
-  </footer>
-</body>
+  </body>
 </html>
