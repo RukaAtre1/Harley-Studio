@@ -9,20 +9,20 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #edebe4;
-  --bg2: #e4e1d9;
-  --bg3: #cccac2;
-  --line: rgba(26,26,24,0.08);
-  --line2: rgba(26,26,24,0.14);
-  --text: #1a1a18;
-  --muted: rgba(26,26,24,0.5);
-  --dim: rgba(26,26,24,0.28);
-  --accent: #8a6c3a;
-  --accent2: #2d4a3e;
+  --bg: #f7f7f3;
+  --bg2: #eef1eb;
+  --bg3: #e1e6de;
+  --line: rgba(24,30,34,0.08);
+  --line2: rgba(24,30,34,0.14);
+  --text: #171b1d;
+  --muted: rgba(23,27,29,0.54);
+  --dim: rgba(23,27,29,0.3);
+  --accent: #9b7a48;
+  --accent2: #314842;
   --penn: #011F5B;
   --penn-l: #1a3a8a;
   --ucla: #1a5c8a;
-  --gold: #8a6c3a;
+  --gold: #9b7a48;
   --red: #7a3a2a;
   --radius: 3px;
   --font-display: 'DM Serif Display', Georgia, serif;
@@ -35,7 +35,10 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background: var(--bg);
+  background:
+    radial-gradient(circle at 18% 16%, rgba(128, 148, 156, 0.12), transparent 24%),
+    radial-gradient(circle at 82% 18%, rgba(49, 72, 66, 0.06), transparent 22%),
+    linear-gradient(180deg, #fbfbf8 0%, var(--bg) 26%, var(--bg2) 100%);
   color: var(--text);
   font-family: var(--font-body);
   font-size: 16px;
@@ -54,7 +57,7 @@ nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   padding: 1.1rem 2.5rem;
   border-bottom: 0.5px solid var(--line);
-  background: rgba(237,235,228,0.88);
+  background: rgba(248,249,245,0.84);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 }
@@ -96,7 +99,7 @@ nav {
   border-radius: 999px;
   border: 0.5px solid var(--line2);
   color: var(--muted);
-  background: rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.36);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -107,7 +110,7 @@ nav {
   transform: translateY(-1px);
   border-color: var(--accent);
   color: var(--text);
-  background: rgba(138,108,58,0.08);
+  background: rgba(155,122,72,0.07);
 }
 .nav-icon svg {
   width: 16px;
@@ -128,16 +131,17 @@ nav {
 }
 .hero-bg {
   position: absolute; inset: 0; z-index: 0;
-  background: radial-gradient(ellipse 80% 60% at 70% 40%, rgba(45,74,62,0.05) 0%, transparent 70%),
-              radial-gradient(ellipse 60% 80% at 20% 80%, rgba(138,108,58,0.04) 0%, transparent 60%);
+  background: radial-gradient(ellipse 82% 62% at 72% 38%, rgba(49,72,66,0.06) 0%, transparent 70%),
+              radial-gradient(ellipse 64% 82% at 18% 82%, rgba(128,148,156,0.08) 0%, transparent 60%),
+              radial-gradient(ellipse 52% 54% at 48% 14%, rgba(255,255,255,0.42) 0%, transparent 72%);
 }
 /* grid texture */
 .hero-bg::after {
   content: '';
   position: absolute; inset: 0;
   background-image:
-    linear-gradient(rgba(26,26,24,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(26,26,24,0.05) 1px, transparent 1px);
+    linear-gradient(rgba(24,30,34,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(24,30,34,0.04) 1px, transparent 1px);
   background-size: 60px 60px;
   mask-image: radial-gradient(ellipse 100% 100% at 50% 0%, black 30%, transparent 80%);
 }
@@ -186,15 +190,16 @@ nav {
   padding: 6px 13px;
   border: 0.5px solid var(--line2);
   color: var(--muted); border-radius: var(--radius);
-  transition: border-color 0.2s, color 0.2s;
+  background: rgba(255,255,255,0.34);
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
 }
-.tag:hover { border-color: var(--accent); color: var(--accent); }
+.tag:hover { border-color: var(--accent); color: var(--accent); background: rgba(255,255,255,0.7); }
 .tag-penn {
-  background: rgba(1,31,91,0.07); border-color: rgba(1,31,91,0.25);
+  background: rgba(1,31,91,0.06); border-color: rgba(1,31,91,0.2);
   color: #1a3a8a;
 }
 .tag-ucla {
-  background: rgba(26,92,138,0.07); border-color: rgba(26,92,138,0.25);
+  background: rgba(26,92,138,0.06); border-color: rgba(26,92,138,0.2);
   color: #1a5c8a;
 }
 
@@ -206,15 +211,16 @@ nav {
   transition: all 0.2s; text-decoration: none; display: inline-block;
 }
 .btn-fill {
-  background: var(--accent2); color: #f7f4ee;
+  background: var(--accent2); color: #f8f8f4;
   border: none;
+  box-shadow: 0 14px 30px rgba(49,72,66,0.14);
 }
-.btn-fill:hover { background: #1e3329; }
+.btn-fill:hover { background: #273a35; }
 .btn-out {
-  background: transparent; color: var(--muted);
+  background: rgba(255,255,255,0.28); color: var(--muted);
   border: 0.5px solid var(--line2);
 }
-.btn-out:hover { border-color: var(--accent); color: var(--accent); }
+.btn-out:hover { border-color: var(--accent); color: var(--accent); background: rgba(255,255,255,0.72); }
 
 /* scroll indicator */
 .scroll-hint {
