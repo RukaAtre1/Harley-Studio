@@ -314,6 +314,9 @@ section { border-top: 0.5px solid var(--line); }
   text-decoration: none;
   cursor: pointer;
 }
+.bc-clickable {
+  cursor: pointer;
+}
 .bc-link-mark {
   position: absolute;
   top: 1.25rem;
@@ -325,7 +328,8 @@ section { border-top: 0.5px solid var(--line); }
   color: var(--dim);
   transition: color 0.2s ease, transform 0.2s ease;
 }
-.bc-link-card:hover .bc-link-mark {
+.bc-link-card:hover .bc-link-mark,
+.bc-clickable:hover .bc-link-mark {
   color: var(--accent);
   transform: translateX(2px);
 }
@@ -777,7 +781,8 @@ footer {
     <div class="bento fade-in">
 
       <!-- SPIRO DEMO — full width -->
-      <div class="bc b-demo">
+      <div class="bc b-demo bc-clickable" data-href="https://devpost.com/software/spiromint" role="link" tabindex="0" aria-label="Open SpiroMint Devpost">
+        <div class="bc-link-mark">Devpost</div>
         <div class="bc-label">Live Demo · SpiroMint — Audio-Driven Generative Art</div>
         <div id="demo-canvas-wrap">
           <canvas id="spirodemo"></canvas>
@@ -924,7 +929,8 @@ footer {
       </a>
 
       <!-- Research mini -->
-      <div class="bc b-research">
+      <a class="bc b-research bc-link-card" href="https://github.com/RukaAtre1" target="_blank" rel="noreferrer" aria-label="Open GitHub profile">
+        <div class="bc-link-mark">GitHub</div>
         <div class="bc-label">Skills</div>
         <div class="skill-item"><span class="skill-name">Python / ML</span><div class="skill-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div></div></div>
         <div class="skill-item"><span class="skill-name">TypeScript / React</span><div class="skill-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div></div></div>
@@ -932,7 +938,7 @@ footer {
         <div class="skill-item"><span class="skill-name">SQL / Data Eng</span><div class="skill-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div></div></div>
         <div class="skill-item"><span class="skill-name">Audio / GenArt</span><div class="skill-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div></div></div>
         <div class="skill-item"><span class="skill-name">C++ / Systems</span><div class="skill-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div><div class="dot"></div></div></div>
-      </div>
+      </a>
 
     </div>
   </div>
@@ -1152,6 +1158,19 @@ bindControl('ctrl-rotors', 'val-rotors', 'rotors');
 bindControl('ctrl-speed', 'val-speed', 'speed', v => v.toFixed(1));
 bindControl('ctrl-complex', 'val-complex', 'complexity');
 bindControl('ctrl-trail', 'val-trail', 'trail', v => v.toFixed(2));
+
+document.querySelectorAll('.bc-clickable[data-href]').forEach((card) => {
+  const openCard = () => window.open(card.dataset.href, '_blank', 'noopener,noreferrer');
+  card.addEventListener('click', (event) => {
+    if (event.target.closest('a, button, input')) return;
+    openCard();
+  });
+  card.addEventListener('keydown', (event) => {
+    if (event.key !== 'Enter' && event.key !== ' ') return;
+    event.preventDefault();
+    openCard();
+  });
+});
 
 /* ── SCROLL FADE-IN ── */
 const obs = new IntersectionObserver((entries) => {
