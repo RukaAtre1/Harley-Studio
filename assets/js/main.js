@@ -65,6 +65,10 @@ const canvas = document.getElementById("spirodemo");
 if (canvas) {
   const ctx = canvas.getContext("2d");
   const frame = canvas.parentElement;
+  const rootStyles = getComputedStyle(document.documentElement);
+  const bg2Rgb = rootStyles.getPropertyValue("--bg2-rgb").trim() || "228, 225, 217";
+  const bg3Rgb = rootStyles.getPropertyValue("--bg3-rgb").trim() || "204, 202, 194";
+  const bg4Rgb = rootStyles.getPropertyValue("--bg4-rgb").trim() || "244, 242, 236";
 
   let width = 0;
   let height = 0;
@@ -165,8 +169,8 @@ if (canvas) {
 
   const paintBackdrop = () => {
     const gradient = ctx.createLinearGradient(0, 0, width, height);
-    gradient.addColorStop(0, "rgba(255,255,255,0.72)");
-    gradient.addColorStop(1, "rgba(220,217,209,0.9)");
+    gradient.addColorStop(0, `rgba(${bg4Rgb}, 0.76)`);
+    gradient.addColorStop(1, `rgba(${bg3Rgb}, 0.9)`);
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, width, height);
 
@@ -190,7 +194,7 @@ if (canvas) {
   };
 
   const draw = () => {
-    trailCtx.fillStyle = `rgba(233, 231, 223, ${state.trail})`;
+    trailCtx.fillStyle = `rgba(${bg2Rgb}, ${state.trail})`;
     trailCtx.fillRect(0, 0, width, height);
 
     const palette = palettes[activePalette];
