@@ -169,8 +169,8 @@ if (canvas) {
 
   const paintBackdrop = () => {
     const gradient = ctx.createLinearGradient(0, 0, width, height);
-    gradient.addColorStop(0, `rgba(${bg4Rgb}, 0.76)`);
-    gradient.addColorStop(1, `rgba(${bg3Rgb}, 0.9)`);
+    gradient.addColorStop(0, `rgba(${bg2Rgb}, 0.94)`);
+    gradient.addColorStop(1, `rgba(${bg3Rgb}, 0.98)`);
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, width, height);
 
