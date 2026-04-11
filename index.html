@@ -355,7 +355,7 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 /* ── TIMELINE ── */
-.timeline { position: relative; padding-left: 1.5rem; }
+.timeline { position: relative; padding-left: 1.5rem; display: flex; flex-direction: column-reverse; }
 .timeline::before {
   content: '';
   position: absolute; left: 0; top: 8px; bottom: 8px;
@@ -792,11 +792,12 @@ footer {
       <div class="sec-title">How I got here.</div>
     </div>
     <div class="timeline fade-in">
-      <div class="t-item">
+      <!-- removed UCLA enrollment item
         <div class="t-year">2022</div>
         <div class="t-main">Enrolled at UCLA</div>
         <div class="t-sub">B.S. Statistics & Data Science · Minor in Data Science Engineering</div>
       </div>
+      -->
       <div class="t-item">
         <div class="t-year">Jul – Aug 2025</div>
         <div class="t-main">PLM Data Analytics Intern · Techtronic Industries</div>
