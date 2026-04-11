@@ -253,6 +253,16 @@ section { border-top: 0.5px solid var(--line); }
   font-weight: 400; color: var(--text);
   letter-spacing: -0.01em;
 }
+.text-link {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 0.5px solid rgba(26,26,24,0.16);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.text-link:hover {
+  color: var(--accent);
+  border-color: currentColor;
+}
 
 /* ── STATS ── */
 .stats-grid {
@@ -298,6 +308,51 @@ section { border-top: 0.5px solid var(--line); }
   position: relative; overflow: hidden;
 }
 .bc:hover { background: var(--bg3); }
+.bc-link-card {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+.bc-link-mark {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.35rem;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--dim);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.bc-link-card:hover .bc-link-mark {
+  color: var(--accent);
+  transform: translateX(2px);
+}
+.bc-link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 1rem;
+}
+.bc-inline-link {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent2);
+  text-decoration: none;
+  border: 0.5px solid rgba(45,74,62,0.22);
+  background: rgba(45,74,62,0.05);
+  padding: 5px 9px;
+  border-radius: 2px;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+.bc-inline-link:hover {
+  color: var(--text);
+  border-color: var(--accent);
+  background: rgba(138,108,58,0.08);
+}
 .bc-label {
   font-family: var(--font-mono);
   font-size: 10px; letter-spacing: 0.2em;
@@ -457,6 +512,16 @@ input[type=range]::-webkit-slider-thumb {
 .pc-row:last-child { border-bottom: none; }
 .pc-key { color: var(--muted); font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
 .pc-val { color: var(--text); text-align: right; font-size: 13px; }
+.pc-val a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 0.5px solid rgba(26,26,24,0.14);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.pc-val a:hover {
+  color: var(--accent);
+  border-color: currentColor;
+}
 .pill {
   font-family: var(--font-mono); font-size: 10px;
   letter-spacing: 0.1em; text-transform: uppercase;
@@ -690,10 +755,11 @@ footer {
           <div class="pc-row"><span class="pc-key">Next</span><span class="pc-val"><span class="pill pill-penn">UPenn MSE '27</span></span></div>
           <div class="pc-row"><span class="pc-key">Current</span><span class="pc-val"><span class="pill pill-ucla">UCLA '26</span></span></div>
           <div class="pc-row"><span class="pc-key">Focus</span><span class="pc-val">AI Systems · Product</span></div>
-          <div class="pc-row"><span class="pc-key">Research</span><span class="pc-val">Music Generative Art</span></div>
-          <div class="pc-row"><span class="pc-key">Best Award</span><span class="pc-val">3rd / 113 · AI Best Coast</span></div>
-          <div class="pc-row"><span class="pc-key">Email</span><span class="pc-val">harleyjia123@gmail.com</span></div>
-          <div class="pc-row"><span class="pc-key">GitHub</span><span class="pc-val">@RukaAtre1</span></div>
+          <div class="pc-row"><span class="pc-key">Research</span><span class="pc-val"><a href="https://jlu227.wixsite.com/kay-lu/teaching" target="_blank" rel="noreferrer">Math + Code + Art</a></span></div>
+          <div class="pc-row"><span class="pc-key">Best Award</span><span class="pc-val"><a href="https://devpost.com/software/spiromint" target="_blank" rel="noreferrer">3rd / 113 · AI Best Coast</a></span></div>
+          <div class="pc-row"><span class="pc-key">Email</span><span class="pc-val"><a href="mailto:harleyjia123@gmail.com">harleyjia123@gmail.com</a></span></div>
+          <div class="pc-row"><span class="pc-key">GitHub</span><span class="pc-val"><a href="https://github.com/RukaAtre1" target="_blank" rel="noreferrer">@RukaAtre1</a></span></div>
+          <div class="pc-row"><span class="pc-key">LinkedIn</span><span class="pc-val"><a href="https://www.linkedin.com/in/junhao-harley-jia" target="_blank" rel="noreferrer">Junhao Harley Jia</a></span></div>
         </div>
       </div>
     </div>
@@ -757,13 +823,17 @@ footer {
           <span class="bc-tag">Web3</span>
           <span class="bc-tag">FFT</span>
         </div>
+        <div class="bc-link-row">
+          <a class="bc-inline-link" href="https://devpost.com/software/spiromint" target="_blank" rel="noreferrer">View Devpost</a>
+        </div>
         <div class="award-pill award-gold">🏆 3rd / 113 · AI Best Coast 2025</div>
         <span class="award-pill award-green" style="margin-left:6px">Blockchain Winner</span>
         <span class="award-pill award-green" style="margin-left:6px">Fintech Winner</span>
       </div>
 
       <!-- FishCapsule -->
-      <div class="bc b-fish">
+      <a class="bc b-fish bc-link-card" href="https://fish-capsule.vercel.app/" target="_blank" rel="noreferrer" aria-label="Open FishCapsule">
+        <div class="bc-link-mark">Live site</div>
         <div class="bc-label">Product · AI Study Tools</div>
         <div class="bc-title">FishCapsule</div>
         <div class="bc-body">
@@ -789,10 +859,11 @@ footer {
           <span class="bc-tag">Zod</span>
           <span class="bc-tag">pdf.js</span>
         </div>
-      </div>
+      </a>
 
       <!-- SpiroMint card -->
-      <div class="bc b-spiro">
+      <a class="bc b-spiro bc-link-card" href="https://jlu227.wixsite.com/kay-lu/teaching" target="_blank" rel="noreferrer" aria-label="Open Math Code Art teaching page">
+        <div class="bc-link-mark">Research</div>
         <div class="bc-label">Research · Generative Art</div>
         <div class="bc-title">Music-Driven Generative Art</div>
         <div class="bc-body">
@@ -806,10 +877,11 @@ footer {
           <span class="bc-tag">Audio ML</span>
           <span class="bc-tag">Python</span>
         </div>
-      </div>
+      </a>
 
       <!-- ML -->
-      <div class="bc b-ml">
+      <a class="bc b-ml bc-link-card" href="https://www.kaggle.com/competitions/predicting-skin-cancer-status" target="_blank" rel="noreferrer" aria-label="Open Kaggle competition">
+        <div class="bc-link-mark">Kaggle</div>
         <div class="bc-label">Machine Learning · Kaggle</div>
         <div class="bc-title">Skin Cancer Classification</div>
         <div class="bc-body">
@@ -832,10 +904,11 @@ footer {
           <span class="bc-tag">ROC/AUC</span>
           <span class="bc-tag">Python</span>
         </div>
-      </div>
+      </a>
 
       <!-- TTI -->
-      <div class="bc b-tti">
+      <a class="bc b-tti bc-link-card" href="https://www.ttigroup.com/" target="_blank" rel="noreferrer" aria-label="Open Techtronic Industries website">
+        <div class="bc-link-mark">Company</div>
         <div class="bc-label">Internship · Enterprise Analytics</div>
         <div class="bc-title">TTI PLM Analytics</div>
         <div class="bc-body">
@@ -848,7 +921,7 @@ footer {
           <span class="bc-tag">VBA</span>
           <span class="bc-tag">ETL</span>
         </div>
-      </div>
+      </a>
 
       <!-- Research mini -->
       <div class="bc b-research">
@@ -925,8 +998,10 @@ footer {
       </div>
     </div>
     <div class="contact-right">
-      <div>harleyjia123@gmail.com</div>
-      <div>@RukaAtre1</div>
+      <div><a class="text-link" href="mailto:harleyjia123@gmail.com">harleyjia123@gmail.com</a></div>
+      <div><a class="text-link" href="https://github.com/RukaAtre1" target="_blank" rel="noreferrer">@RukaAtre1</a></div>
+      <div><a class="text-link" href="https://www.linkedin.com/in/junhao-harley-jia" target="_blank" rel="noreferrer">LinkedIn</a></div>
+      <div><a class="text-link" href="https://devpost.com/software/spiromint" target="_blank" rel="noreferrer">SpiroMint Devpost</a></div>
       <div>Los Angeles, CA</div>
       <div style="margin-top:0.6rem;color:var(--dim);font-size:9px">→ Philadelphia, PA · Fall 2026</div>
     </div>
