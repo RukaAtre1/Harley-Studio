@@ -1,441 +1,1006 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Junhao (Harley) Jia builds AI-native products, grounded learning systems, and music-driven computational media."
-    />
-    <title>Junhao (Harley) Jia</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260411-hakuji-3" />
-    <script src="assets/js/main.js?v=20260411-hakuji-3" defer></script>
-  </head>
-  <body>
-    <div class="page-veil" aria-hidden="true"></div>
-    <div class="page-grain" aria-hidden="true"></div>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Junhao (Harley) Jia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #edebe4;
+  --bg2: #e4e1d9;
+  --bg3: #cccac2;
+  --line: rgba(26,26,24,0.08);
+  --line2: rgba(26,26,24,0.14);
+  --text: #1a1a18;
+  --muted: rgba(26,26,24,0.5);
+  --dim: rgba(26,26,24,0.28);
+  --accent: #8a6c3a;
+  --accent2: #2d4a3e;
+  --penn: #011F5B;
+  --penn-l: #1a3a8a;
+  --ucla: #1a5c8a;
+  --gold: #8a6c3a;
+  --red: #7a3a2a;
+  --radius: 3px;
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body: 'Outfit', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+}
 
-    <header class="site-header">
-      <a class="brand" href="#home">Junhao / Harley / Jia</a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Open navigation">
-        <span></span>
-        <span></span>
-      </button>
-      <nav class="site-nav" aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#timeline">Timeline</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    <main>
-      <section class="hero shell" id="home">
-        <div class="hero-layout">
-          <div class="hero-copy reveal">
-            <p class="section-mark">Hakuji / White Porcelain / Los Angeles to Philadelphia</p>
-            <h1>
-              AI systems,
-              <span>human tools,</span>
-              and music with
-              <em>ceramic calm.</em>
-            </h1>
-            <p class="hero-lead">
-              I build AI-native products where reliability, taste, and real user experience have to
-              coexist. Statistics at UCLA. Systems Engineering next at Penn. Researching music-driven
-              generative art in between.
-            </p>
-            <div class="hero-actions">
-              <a class="button button--solid" href="#projects">View selected work</a>
-              <a class="button button--ghost" href="mailto:harleyjia123@gmail.com">Email me</a>
-            </div>
-            <div class="hero-tags" aria-label="Highlights">
-              <span>Incoming Penn MSE '27</span>
-              <span>UCLA Statistics '26</span>
-              <span>AI Product + RAG</span>
-              <span>Computational Media</span>
-              <span>Open to opportunities</span>
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg3); }
+::-webkit-scrollbar-thumb { background: rgba(26,26,24,0.2); border-radius: 2px; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 1.1rem 2.5rem;
+  border-bottom: 0.5px solid var(--line);
+  background: rgba(237,235,228,0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+.nav-name {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+.nav-links {
+  display: flex; gap: 2.2rem;
+  font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--muted);
+}
+.nav-links a { color: inherit; text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover { color: var(--text); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 8rem 0 4rem;
+  position: relative; overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0; z-index: 0;
+  background: radial-gradient(ellipse 80% 60% at 70% 40%, rgba(45,74,62,0.05) 0%, transparent 70%),
+              radial-gradient(ellipse 60% 80% at 20% 80%, rgba(138,108,58,0.04) 0%, transparent 60%);
+}
+/* grid texture */
+.hero-bg::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(26,26,24,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26,26,24,0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 100% 100% at 50% 0%, black 30%, transparent 80%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 1100px);
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px; letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--accent2); margin-bottom: 1.8rem;
+  display: flex; align-items: center; gap: 10px;
+}
+.hero-eyebrow::before {
+  content: ''; display: inline-block;
+  width: 28px; height: 0.5px; background: var(--accent2);
+}
+
+.hero-h1 {
+  font-family: var(--font-display);
+  font-size: clamp(64px, 8.6vw, 112px);
+  font-weight: 400; line-height: 0.98;
+  letter-spacing: -0.025em;
+  color: var(--text);
+  margin-bottom: 1.8rem;
+}
+.hero-h1 em {
+  font-style: italic; color: var(--accent);
+}
+
+.hero-sub {
+  font-size: 18px; line-height: 1.85;
+  color: var(--muted); max-width: 640px;
+  margin-bottom: 2.7rem;
+}
+
+.hero-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 2.7rem; }
+.tag {
+  font-family: var(--font-mono);
+  font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 6px 13px;
+  border: 0.5px solid var(--line2);
+  color: var(--muted); border-radius: var(--radius);
+  transition: border-color 0.2s, color 0.2s;
+}
+.tag:hover { border-color: var(--accent); color: var(--accent); }
+.tag-penn {
+  background: rgba(1,31,91,0.07); border-color: rgba(1,31,91,0.25);
+  color: #1a3a8a;
+}
+.tag-ucla {
+  background: rgba(26,92,138,0.07); border-color: rgba(26,92,138,0.25);
+  color: #1a5c8a;
+}
+
+.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn {
+  font-family: var(--font-mono);
+  font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 12px 26px; cursor: pointer; border-radius: var(--radius);
+  transition: all 0.2s; text-decoration: none; display: inline-block;
+}
+.btn-fill {
+  background: var(--accent2); color: #f7f4ee;
+  border: none;
+}
+.btn-fill:hover { background: #1e3329; }
+.btn-out {
+  background: transparent; color: var(--muted);
+  border: 0.5px solid var(--line2);
+}
+.btn-out:hover { border-color: var(--accent); color: var(--accent); }
+
+/* scroll indicator */
+.scroll-hint {
+  position: absolute; bottom: 2rem; left: max(2.5rem, calc((100vw - 1100px) / 2 + 2.5rem)); z-index: 1;
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--dim);
+  display: flex; align-items: center; gap: 8px;
+}
+.scroll-line {
+  width: 32px; height: 0.5px; background: var(--dim);
+  position: relative; overflow: hidden;
+}
+.scroll-line::after {
+  content: '';
+  position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+  background: var(--accent);
+  animation: scanline 2s ease-in-out infinite;
+}
+@keyframes scanline { 0%,100%{left:-100%} 50%{left:100%} }
+
+/* ── SECTION BASE ── */
+section { border-top: 0.5px solid var(--line); }
+.section-inner { max-width: 1100px; margin: 0 auto; padding: 5rem 2.5rem; }
+.sec-header {
+  display: flex; justify-content: space-between; align-items: baseline;
+  margin-bottom: 3rem;
+}
+.sec-num {
+  font-family: var(--font-mono);
+  font-size: 11px; letter-spacing: 0.2em;
+  color: var(--dim); text-transform: uppercase;
+}
+.sec-title {
+  font-family: var(--font-display);
+  font-size: clamp(34px, 4.6vw, 52px);
+  font-weight: 400; color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+/* ── STATS ── */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0; background: var(--line);
+  border: 0.5px solid var(--line);
+  border-radius: var(--radius); overflow: hidden;
+}
+.stat-card {
+  background: var(--bg2); padding: 2.2rem 2rem;
+  border-right: 0.5px solid var(--line);
+  transition: background 0.2s;
+}
+.stat-card:last-child { border-right: none; }
+.stat-card:hover { background: var(--bg3); }
+.stat-n {
+  font-family: var(--font-display);
+  font-size: 46px; color: var(--text);
+  letter-spacing: -0.03em; line-height: 1;
+  margin-bottom: 8px;
+}
+.stat-n span { color: var(--accent2); }
+.stat-l {
+  font-family: var(--font-mono);
+  font-size: 11px; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--muted);
+}
+
+/* ── BENTO PROJECTS ── */
+.bento {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto;
+  gap: 1px; background: var(--line);
+  border: 0.5px solid var(--line);
+  border-radius: var(--radius); overflow: hidden;
+}
+.bc {
+  background: var(--bg2);
+  padding: 2.2rem;
+  transition: background 0.2s;
+  position: relative; overflow: hidden;
+}
+.bc:hover { background: var(--bg3); }
+.bc-label {
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--dim);
+  margin-bottom: 0.8rem;
+}
+.bc-title {
+  font-family: var(--font-display);
+  font-size: 24px; font-weight: 400;
+  color: var(--text); line-height: 1.25;
+  margin-bottom: 0.6rem;
+}
+.bc-body {
+  font-size: 15px; color: var(--muted); line-height: 1.8;
+}
+
+.bc-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 1.1rem; }
+.bc-tag {
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: 0.1em;
+  text-transform: uppercase; padding: 4px 8px;
+  border: 0.5px solid var(--line2); color: var(--dim);
+  border-radius: 2px;
+}
+
+.award-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 2px; margin-top: 10px;
+}
+.award-gold { background: rgba(138,108,58,0.1); color: #6b4f1a; border: 0.5px solid rgba(138,108,58,0.3); }
+.award-blue { background: rgba(1,31,91,0.07); color: #1a3a8a; border: 0.5px solid rgba(1,31,91,0.2); }
+.award-green { background: rgba(45,74,62,0.08); color: #2d4a3e; border: 0.5px solid rgba(45,74,62,0.25); }
+
+/* grid spans */
+.b-demo    { grid-column: span 12; }
+.b-fish    { grid-column: span 7; }
+.b-spiro   { grid-column: span 5; }
+.b-ml      { grid-column: span 5; }
+.b-tti     { grid-column: span 4; }
+.b-research{ grid-column: span 3; }
+
+/* progress bars */
+.prog { margin-top: 1.2rem; }
+.prog-row { margin-bottom: 10px; }
+.prog-meta {
+  display: flex; justify-content: space-between;
+  font-family: var(--font-mono); font-size: 10px;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--muted); margin-bottom: 5px;
+}
+.prog-bar { height: 2px; background: rgba(255,255,255,0.06); border-radius: 1px; }
+.prog-fill { height: 100%; border-radius: 1px; background: var(--accent); }
+
+/* ── DEMO SECTION ── */
+#demo-canvas-wrap {
+  width: 100%; height: 360px;
+  background: var(--bg3); border-radius: var(--radius);
+  border: 0.5px solid var(--line2);
+  position: relative; overflow: hidden;
+  margin-bottom: 1.2rem;
+}
+canvas#spirodemo {
+  width: 100%; height: 100%;
+  display: block;
+}
+.demo-controls {
+  display: flex; flex-wrap: wrap; gap: 1.2rem;
+  align-items: center; margin-top: 1rem;
+}
+.demo-ctrl-group { display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 120px; }
+.demo-ctrl-label {
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--dim);
+}
+input[type=range] {
+  -webkit-appearance: none; width: 100%; height: 3px;
+  background: var(--line2); outline: none; border-radius: 1px;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none; width: 12px; height: 12px;
+  border-radius: 50%; background: var(--accent); cursor: pointer;
+}
+.demo-val {
+  font-family: var(--font-mono); font-size: 11px;
+  color: var(--accent); text-align: right;
+}
+.demo-desc {
+  font-size: 14px; color: var(--muted); line-height: 1.8; margin-top: 1.2rem;
+  border-top: 0.5px solid var(--line); padding-top: 1rem;
+}
+
+/* ── TIMELINE ── */
+.timeline { position: relative; padding-left: 1.5rem; }
+.timeline::before {
+  content: '';
+  position: absolute; left: 0; top: 8px; bottom: 8px;
+  width: 0.5px; background: var(--line2);
+}
+.t-item {
+  position: relative;
+  padding: 0 0 2.2rem 1.5rem;
+}
+.t-item::before {
+  content: '';
+  position: absolute; left: -4.5px; top: 7px;
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--bg2); border: 0.5px solid var(--line2);
+  transition: border-color 0.3s, background 0.3s;
+}
+.t-item:hover::before {
+  border-color: var(--accent); background: var(--accent);
+}
+.t-item.future::before {
+  border-color: #1a3a8a; background: rgba(1,31,91,0.12);
+}
+.t-year {
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--dim); margin-bottom: 4px;
+}
+.t-main { font-size: 18px; font-weight: 500; color: var(--text); margin-bottom: 4px; }
+.t-sub { font-size: 14px; color: var(--muted); }
+
+/* ── PROFILE / ABOUT ── */
+.about-grid {
+  display: grid; grid-template-columns: 1fr 380px; gap: 4rem; align-items: start;
+}
+.about-text p { font-size: 18px; color: var(--muted); line-height: 1.9; margin-bottom: 1.4rem; }
+.about-text p strong { color: var(--text); font-weight: 500; }
+
+.profile-card-full {
+  border: 0.5px solid var(--line2); border-radius: var(--radius); overflow: hidden;
+}
+.pc-header {
+  padding: 1.5rem; background: var(--bg3);
+  border-bottom: 0.5px solid var(--line);
+  display: flex; align-items: center; gap: 14px;
+}
+.avatar-circle {
+  width: 50px; height: 50px; border-radius: 50%;
+  background: rgba(45,74,62,0.08);
+  border: 0.5px solid rgba(45,74,62,0.2);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-mono); font-size: 14px; color: var(--accent2);
+}
+.pc-name { font-size: 17px; font-weight: 500; color: var(--text); }
+.pc-handle { font-family: var(--font-mono); font-size: 11px; color: var(--muted); margin-top: 2px; letter-spacing: 0.05em; }
+.pc-rows {}
+.pc-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 11px 1.5rem; border-bottom: 0.5px solid var(--line);
+  font-size: 13px;
+}
+.pc-row:last-child { border-bottom: none; }
+.pc-key { color: var(--muted); font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+.pc-val { color: var(--text); text-align: right; font-size: 13px; }
+.pill {
+  font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 3px 8px; border-radius: 2px;
+}
+.pill-penn { background: rgba(1,31,91,0.07); color: #1a3a8a; border: 0.5px solid rgba(1,31,91,0.2); }
+.pill-ucla { background: rgba(26,92,138,0.07); color: #1a5c8a; border: 0.5px solid rgba(26,92,138,0.2); }
+
+/* ── SKILLS ── */
+.skills-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--line); border: 0.5px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.skill-group { background: var(--bg2); padding: 1.5rem; }
+.skill-group-title {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 1rem;
+}
+.skill-item {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 8px 0; border-bottom: 0.5px solid var(--line); font-size: 13px;
+}
+.skill-item:last-child { border-bottom: none; }
+.skill-name { color: var(--muted); }
+.skill-dots { display: flex; gap: 3px; }
+.dot { width: 5px; height: 5px; border-radius: 50%; background: var(--line2); }
+.dot.on { background: var(--accent); }
+
+/* ── CONTACT ── */
+.contact-section {
+  border-top: 0.5px solid var(--line);
+  padding: 5rem 2.5rem;
+  max-width: 1100px; margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: flex-end;
+}
+.contact-left {}
+.contact-eyebrow {
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--accent2); margin-bottom: 1rem;
+}
+.contact-h2 {
+  font-family: var(--font-display);
+  font-size: clamp(42px, 5.4vw, 66px);
+  font-weight: 400; color: var(--text);
+  line-height: 1.05; letter-spacing: -0.02em;
+  margin-bottom: 2rem;
+}
+.contact-right {
+  text-align: right;
+  font-family: var(--font-mono); font-size: 12px;
+  letter-spacing: 0.08em; color: var(--muted);
+  line-height: 2.2;
+}
+
+/* ── FOOTER ── */
+footer {
+  border-top: 0.5px solid var(--line);
+  padding: 1.2rem 2.5rem;
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--dim);
+}
+
+/* ── ANIMATIONS ── */
+.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .stats-grid { grid-template-columns: repeat(2,1fr); }
+  .b-fish, .b-spiro, .b-ml, .b-tti, .b-research { grid-column: span 12; }
+  .about-grid { grid-template-columns: 1fr; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .contact-section { flex-direction: column; gap: 2rem; }
+  .contact-right { text-align: left; }
+  nav { padding: 1rem 1.5rem; }
+  .nav-inner { gap: 1rem; }
+  .nav-links { gap: 1.2rem; }
+  .hero { padding: 7rem 0 3rem; }
+  .hero-content { padding: 0 1.5rem; }
+  .hero-h1 { font-size: clamp(54px, 16vw, 78px); }
+  .hero-sub, .about-text p { font-size: 16px; }
+  .scroll-hint { left: 1.5rem; bottom: 1.5rem; }
+  .section-inner { padding: 3.5rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-name">Junhao · Harley · Jia</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Builder · Researcher · Creator</div>
+    <h1 class="hero-h1">
+      AI systems,<br>
+      human tools,<br>
+      and <em>music.</em>
+    </h1>
+    <p class="hero-sub">
+      I build AI-native products where intelligent systems meet real human experience — from self-study platforms to generative music art. Statistics at UCLA, Systems Engineering at Penn.
+    </p>
+    <div class="hero-tags">
+      <span class="tag tag-penn">↗ Incoming Penn MSE '27</span>
+      <span class="tag tag-ucla">UCLA Statistics '26</span>
+      <span class="tag">AI Product</span>
+      <span class="tag">Full-Stack</span>
+      <span class="tag">Generative Art</span>
+      <span class="tag">Open to Opportunities</span>
+    </div>
+    <div class="hero-btns">
+      <a href="#projects" class="btn btn-fill">View Projects</a>
+      <a href="#contact" class="btn btn-out">Get in Touch</a>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    Scroll
+  </div>
+</section>
+
+<!-- STATS -->
+<section>
+  <div class="section-inner" style="padding-top:3rem;padding-bottom:3rem;">
+    <div class="stats-grid fade-in">
+      <div class="stat-card">
+        <div class="stat-n">6.18<span>M+</span></div>
+        <div class="stat-l">Data rows analyzed</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-n">70<span>%</span></div>
+        <div class="stat-l">LLM error reduction</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-n"><span>#</span>3<span>/113</span></div>
+        <div class="stat-l">AI Best Coast '25</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-n">99<span>%</span></div>
+        <div class="stat-l">RAG citation coverage</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="sec-header fade-in">
+      <div class="sec-num">01 — About</div>
+      <div class="sec-title">Who I am.</div>
+    </div>
+    <div class="about-grid fade-in">
+      <div class="about-text">
+        <p>
+          I'm a <strong>statistics and AI researcher</strong> at UCLA finishing my B.S. in Statistics & Data Science this June, then heading to <strong>the University of Pennsylvania</strong> for an M.S.E. in Systems Engineering.
+        </p>
+        <p>
+          My work lives at the edge of <strong>AI systems, product development, and applied ML</strong> — I care deeply about building tools that actually work in the hands of real people. That means rigorous engineering under the hood and frictionless experience on top.
+        </p>
+        <p>
+          Outside code, I explore <strong>music-driven generative art</strong>: turning audio features into visual systems, building reproducible pipelines that bridge math, computation, and aesthetics. This intersection — structured systems expressing something human — is what keeps me curious.
+        </p>
+        <p>
+          I've shipped production LLM pipelines, won hackathons, published research modules, and analyzed millions of rows of enterprise data. Now I'm looking for opportunities where I can <strong>build AI products from zero to one.</strong>
+        </p>
+      </div>
+      <div class="profile-card-full">
+        <div class="pc-header">
+          <div class="avatar-circle">JJ</div>
+          <div>
+            <div class="pc-name">Junhao (Harley) Jia</div>
+            <div class="pc-handle">@RukaAtre1 · Los Angeles, CA</div>
+          </div>
+        </div>
+        <div class="pc-rows">
+          <div class="pc-row"><span class="pc-key">Next</span><span class="pc-val"><span class="pill pill-penn">UPenn MSE '27</span></span></div>
+          <div class="pc-row"><span class="pc-key">Current</span><span class="pc-val"><span class="pill pill-ucla">UCLA '26</span></span></div>
+          <div class="pc-row"><span class="pc-key">Focus</span><span class="pc-val">AI Systems · Product</span></div>
+          <div class="pc-row"><span class="pc-key">Research</span><span class="pc-val">Music Generative Art</span></div>
+          <div class="pc-row"><span class="pc-key">Best Award</span><span class="pc-val">3rd / 113 · AI Best Coast</span></div>
+          <div class="pc-row"><span class="pc-key">Email</span><span class="pc-val">harleyjia123@gmail.com</span></div>
+          <div class="pc-row"><span class="pc-key">GitHub</span><span class="pc-val">@RukaAtre1</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-inner">
+    <div class="sec-header fade-in">
+      <div class="sec-num">02 — Projects</div>
+      <div class="sec-title">Things I've built.</div>
+    </div>
+
+    <div class="bento fade-in">
+
+      <!-- SPIRO DEMO — full width -->
+      <div class="bc b-demo">
+        <div class="bc-label">Live Demo · SpiroMint — Audio-Driven Generative Art</div>
+        <div id="demo-canvas-wrap">
+          <canvas id="spirodemo"></canvas>
+        </div>
+        <div class="demo-controls">
+          <div class="demo-ctrl-group">
+            <div class="demo-ctrl-label">Rotors <span class="demo-val" id="val-rotors">3</span></div>
+            <input type="range" id="ctrl-rotors" min="2" max="7" value="3" step="1">
+          </div>
+          <div class="demo-ctrl-group">
+            <div class="demo-ctrl-label">Speed <span class="demo-val" id="val-speed">1.0</span>x</div>
+            <input type="range" id="ctrl-speed" min="0.2" max="3" value="1" step="0.1">
+          </div>
+          <div class="demo-ctrl-group">
+            <div class="demo-ctrl-label">Complexity <span class="demo-val" id="val-complex">4</span></div>
+            <input type="range" id="ctrl-complex" min="1" max="9" value="4" step="1">
+          </div>
+          <div class="demo-ctrl-group">
+            <div class="demo-ctrl-label">Trail <span class="demo-val" id="val-trail">0.04</span></div>
+            <input type="range" id="ctrl-trail" min="0.01" max="0.12" value="0.04" step="0.01">
+          </div>
+          <div>
+            <div class="demo-ctrl-label" style="margin-bottom:8px">Palette</div>
+            <div style="display:flex;gap:6px" id="palette-btns">
+              <button onclick="setPalette('aurora')" style="width:20px;height:20px;border-radius:50%;background:linear-gradient(135deg,#7eb8a4,#c8b89a);border:0.5px solid rgba(255,255,255,0.2);cursor:pointer"></button>
+              <button onclick="setPalette('fire')" style="width:20px;height:20px;border-radius:50%;background:linear-gradient(135deg,#c45c3a,#c8a84b);border:0.5px solid rgba(255,255,255,0.2);cursor:pointer"></button>
+              <button onclick="setPalette('ice')" style="width:20px;height:20px;border-radius:50%;background:linear-gradient(135deg,#7ea8e8,#b8d4f4);border:0.5px solid rgba(255,255,255,0.2);cursor:pointer"></button>
+              <button onclick="setPalette('mono')" style="width:20px;height:20px;border-radius:50%;background:linear-gradient(135deg,#888,#ddd);border:0.5px solid rgba(255,255,255,0.2);cursor:pointer"></button>
             </div>
           </div>
-
-          <aside class="hero-panel reveal">
-            <div class="panel-shell ceramic-card">
-              <div class="portrait-wrap">
-                <img
-                  src="assets/images/Ruka.jpg"
-                  alt="Portrait of Junhao Jia"
-                  class="portrait"
-                  loading="eager"
-                />
-                <div class="portrait-badge">JJ</div>
-              </div>
-              <div class="profile-meta">
-                <p class="profile-kicker">Current profile</p>
-                <h2>Junhao (Harley) Jia</h2>
-                <p class="profile-copy">
-                  Builder, researcher, and pianist working on grounded AI products and music-shaped
-                  computational systems.
-                </p>
-              </div>
-              <dl class="profile-list">
-                <div>
-                  <dt>Current</dt>
-                  <dd>UCLA Statistics &amp; Data Science, Class of 2026</dd>
-                </div>
-                <div>
-                  <dt>Next</dt>
-                  <dd>University of Pennsylvania MSE, Fall 2026</dd>
-                </div>
-                <div>
-                  <dt>Focus</dt>
-                  <dd>AI systems, product design, applied ML</dd>
-                </div>
-                <div>
-                  <dt>Best signal</dt>
-                  <dd>3rd place out of 113 teams at AI Best Coast 2025</dd>
-                </div>
-              </dl>
-              <div class="panel-links">
-                <a href="https://github.com/RukaAtre1" target="_blank" rel="noopener noreferrer">
-                  GitHub
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/junhao-harley-jia/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  LinkedIn
-                </a>
-                <a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
-              </div>
-            </div>
-          </aside>
         </div>
-
-        <div class="stats-board reveal" aria-label="Key metrics">
-          <article class="stat ceramic-card">
-            <p class="stat-value">6.18M+</p>
-            <p class="stat-label">rows analyzed in enterprise product usage data</p>
-          </article>
-          <article class="stat ceramic-card">
-            <p class="stat-value">70%</p>
-            <p class="stat-label">reduction in invalid structured LLM outputs</p>
-          </article>
-          <article class="stat ceramic-card">
-            <p class="stat-value">99%</p>
-            <p class="stat-label">citation coverage in slide-grounded study workflows</p>
-          </article>
-          <article class="stat ceramic-card">
-            <p class="stat-value">#3 / 113</p>
-            <p class="stat-label">AI Best Coast 2025, plus blockchain and fintech wins</p>
-          </article>
+        <div class="demo-desc">
+          SpiroMint transforms audio features (RMS, tempo, spectral centroid) into deterministic parametric animations using multi-rotor spirograph curves. Patterns are fully reproducible from audio metadata — enabling provenance verification and on-chain minting via IPFS.
+          <br><br>
+          <span style="color:var(--accent);font-family:var(--font-mono);font-size:10px;letter-spacing:0.1em">
+            ↑ Use the controls to explore. Each parameter set mirrors how audio features drive the visual output in the real pipeline.
+          </span>
         </div>
-      </section>
-
-      <section class="shell section-block" id="about">
-        <div class="section-intro reveal">
-          <p class="section-mark">About</p>
-          <h2>Structured systems that still feel human.</h2>
+        <div class="bc-tags">
+          <span class="bc-tag">JavaScript Canvas</span>
+          <span class="bc-tag">Meyda</span>
+          <span class="bc-tag">IPFS</span>
+          <span class="bc-tag">Web3</span>
+          <span class="bc-tag">FFT</span>
         </div>
+        <div class="award-pill award-gold">🏆 3rd / 113 · AI Best Coast 2025</div>
+        <span class="award-pill award-green" style="margin-left:6px">Blockchain Winner</span>
+        <span class="award-pill award-green" style="margin-left:6px">Fintech Winner</span>
+      </div>
 
-        <div class="about-grid">
-          <article class="about-copy ceramic-card reveal">
-            <p>
-              I am finishing a B.S. in Statistics and Data Science at UCLA, then moving to the
-              University of Pennsylvania for an MSE in Systems Engineering. The throughline in my work
-              is not just AI capability. It is controlled capability.
-            </p>
-            <p>
-              I care about products that can survive real use: grounded retrieval, strong schemas,
-              measurable failure reduction, and interfaces that do not make users negotiate with the
-              model. That is the standard behind projects like FishCapsule.
-            </p>
-            <p>
-              Outside product systems, I build music-driven generative art. Audio becomes geometry,
-              geometry becomes motion, and the result stays reproducible. That mix of rigor and
-              expression is the part I keep chasing.
-            </p>
-          </article>
-
-          <aside class="about-side reveal">
-            <div class="trajectory ceramic-card">
-              <p class="mini-label">Trajectory</p>
-              <div class="trajectory-line" aria-hidden="true"></div>
-              <div class="trajectory-step">
-                <span>2022</span>
-                <strong>UCLA</strong>
-                <small>Statistics and Data Science</small>
-              </div>
-              <div class="trajectory-step">
-                <span>2025</span>
-                <strong>Research + Hackathons</strong>
-                <small>Generative art, AI systems, public demos</small>
-              </div>
-              <div class="trajectory-step">
-                <span>2026</span>
-                <strong>Penn</strong>
-                <small>Systems engineering and product depth</small>
-              </div>
-            </div>
-
-            <div class="skills ceramic-card">
-              <p class="mini-label">Core stack</p>
-              <div class="skill-row">
-                <span>Python / ML</span>
-                <strong>Advanced</strong>
-              </div>
-              <div class="skill-row">
-                <span>TypeScript / React</span>
-                <strong>Strong</strong>
-              </div>
-              <div class="skill-row">
-                <span>LLM / RAG</span>
-                <strong>Advanced</strong>
-              </div>
-              <div class="skill-row">
-                <span>SQL / Data</span>
-                <strong>Strong</strong>
-              </div>
-              <div class="skill-row">
-                <span>Audio / Gen Art</span>
-                <strong>Research</strong>
-              </div>
-            </div>
-          </aside>
+      <!-- FishCapsule -->
+      <div class="bc b-fish">
+        <div class="bc-label">Product · AI Study Tools</div>
+        <div class="bc-title">FishCapsule</div>
+        <div class="bc-body">
+          An AI-powered self-study platform built for depth, not distraction. Ingests syllabi, maps courses, selects slides, and maintains persistent study workflows — all grounded in your actual materials.<br><br>
+          The technical core: a schema-first LLM pipeline using Zod contracts for structured generation, slide-grounded RAG with hash-based caching, and automated JSON repair that reduced invalid outputs by 70%. Citation coverage sits at 99% with sub-second cached responses.
         </div>
-      </section>
-
-      <section class="shell section-block" id="projects">
-        <div class="section-intro reveal">
-          <p class="section-mark">Projects</p>
-          <h2>Selected work, anchored in proof.</h2>
-        </div>
-
-        <article class="feature ceramic-card reveal">
-          <div class="feature-copy">
-            <p class="mini-label">Live system study</p>
-            <h3>SpiroMint</h3>
-            <p>
-              Audio features become deterministic geometry through multi-rotor spirograph motion.
-              This demo keeps the same idea as the real project: parameters map cleanly, the motion is
-              reproducible, and the aesthetic output is not hand-waved.
-            </p>
-            <div class="feature-metrics">
-              <span>AI Best Coast 2025</span>
-              <span>3rd place / 113 teams</span>
-              <span>Blockchain winner</span>
-              <span>Fintech winner</span>
-            </div>
+        <div class="prog" style="margin-top:1.2rem">
+          <div class="prog-row">
+            <div class="prog-meta"><span>Citation coverage</span><span>99%</span></div>
+            <div class="prog-bar"><div class="prog-fill" style="width:99%"></div></div>
           </div>
-
-          <div class="feature-stage">
-            <div class="canvas-frame">
-              <canvas id="spirodemo" aria-label="Interactive SpiroMint demo"></canvas>
-            </div>
-            <div class="demo-controls">
-              <label class="control">
-                <span>Rotors <strong id="val-rotors">3</strong></span>
-                <input type="range" id="ctrl-rotors" min="2" max="7" value="3" step="1" />
-              </label>
-              <label class="control">
-                <span>Speed <strong id="val-speed">1.0</strong></span>
-                <input type="range" id="ctrl-speed" min="0.2" max="3" value="1" step="0.1" />
-              </label>
-              <label class="control">
-                <span>Complexity <strong id="val-complex">4</strong></span>
-                <input type="range" id="ctrl-complex" min="1" max="9" value="4" step="1" />
-              </label>
-              <label class="control">
-                <span>Trail <strong id="val-trail">0.04</strong></span>
-                <input type="range" id="ctrl-trail" min="0.01" max="0.12" value="0.04" step="0.01" />
-              </label>
-              <div class="swatches" aria-label="Color palette picker">
-                <button class="swatch swatch--moss is-active" data-palette="moss" aria-label="Moss palette"></button>
-                <button class="swatch swatch--mist" data-palette="mist" aria-label="Mist palette"></button>
-                <button class="swatch swatch--ember" data-palette="ember" aria-label="Ember palette"></button>
-                <button class="swatch swatch--ink" data-palette="ink" aria-label="Ink palette"></button>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <div class="project-grid">
-          <article class="project-card ceramic-card reveal">
-            <div class="project-media">
-              <img
-                src="assets/images/fishcapsule-landing.png"
-                alt="FishCapsule landing page preview"
-                loading="lazy"
-              />
-            </div>
-            <div class="project-copy">
-              <p class="mini-label">Product / AI study tools</p>
-              <h3>FishCapsule</h3>
-              <p>
-                A self-study platform built around source-grounded workflows, schema-first LLM calls,
-                caching, and automated JSON repair. It is designed for depth instead of distraction.
-              </p>
-              <ul class="metric-list">
-                <li>99% citation coverage</li>
-                <li>70% invalid output reduction</li>
-                <li>Featured at PIC Spotlight, January 2026</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="project-card ceramic-card reveal">
-            <div class="project-media">
-              <img
-                src="assets/images/spiromint-cover.jpg"
-                alt="SpiroMint project cover"
-                loading="lazy"
-              />
-            </div>
-            <div class="project-copy">
-              <p class="mini-label">Research / computational media</p>
-              <h3>Music-Driven Generative Art</h3>
-              <p>
-                Undergraduate research with Prof. Jiayin Lu translating beats, RMS, and spectral
-                signals into reproducible visual systems using Python, PIL, and FFmpeg.
-              </p>
-              <ul class="metric-list">
-                <li>Audio to geometry to video pipeline</li>
-                <li>Reproducible module for UCLA Math-Code-Art</li>
-                <li>Human expression through explicit system design</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="project-card ceramic-card reveal">
-            <div class="project-copy project-copy--text">
-              <p class="mini-label">Enterprise analytics</p>
-              <h3>TTI PLM Analytics</h3>
-              <p>
-                Analyzed 6.18M+ usage logs and 14,624 user records, surfaced underused licenses, and
-                built reporting automation that cut manual effort by 38+ hours each month.
-              </p>
-              <ul class="metric-list">
-                <li>15% underutilized licenses identified</li>
-                <li>$34K projected annual savings</li>
-                <li>ETL across Teamcenter and OpenLM</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="project-card ceramic-card reveal">
-            <div class="project-copy project-copy--text">
-              <p class="mini-label">Machine learning</p>
-              <h3>Skin Cancer Classification</h3>
-              <p>
-                End-to-end modeling on 50K dermatology rows with aligned preprocessing, feature
-                screening, and model comparison across logistic regression, random forest, and
-                XGBoost.
-              </p>
-              <ul class="metric-list">
-                <li>0.607 AUC on final model</li>
-                <li>Top 4% ranking in class cohort</li>
-                <li>Strong emphasis on evaluation discipline</li>
-              </ul>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="shell section-block" id="timeline">
-        <div class="section-intro reveal">
-          <p class="section-mark">Timeline</p>
-          <h2>How the trajectory is building.</h2>
-        </div>
-
-        <div class="timeline-grid">
-          <article class="timeline-summary ceramic-card reveal">
-            <p class="mini-label">Short read</p>
-            <h3>From statistics to product systems.</h3>
-            <p>
-              The pattern is consistent: quantify what matters, reduce ambiguity, and build interfaces
-              that make the system legible. That has shown up in enterprise analytics, study tooling,
-              and generative media.
-            </p>
-            <div class="chip-list">
-              <span>AI systems</span>
-              <span>Grounded retrieval</span>
-              <span>Product design</span>
-              <span>Computational art</span>
-            </div>
-          </article>
-
-          <div class="timeline-list">
-            <article class="timeline-item ceramic-card reveal">
-              <span class="timeline-year">2022</span>
-              <h3>Started at UCLA</h3>
-              <p>B.S. in Statistics and Data Science, with a minor in Data Science Engineering.</p>
-            </article>
-            <article class="timeline-item ceramic-card reveal">
-              <span class="timeline-year">Jul-Aug 2025</span>
-              <h3>PLM Data Analytics Intern at Techtronic Industries</h3>
-              <p>Built analytics workflows from millions of usage records with measurable savings.</p>
-            </article>
-            <article class="timeline-item ceramic-card reveal">
-              <span class="timeline-year">Sep 2025</span>
-              <h3>Research in music-driven generative art</h3>
-              <p>Developed reproducible audio-conditioned visual systems with UCLA Math-Code-Art.</p>
-            </article>
-            <article class="timeline-item ceramic-card reveal">
-              <span class="timeline-year">Nov 2025</span>
-              <h3>SpiroMint wins at AI Best Coast</h3>
-              <p>3rd place overall, plus blockchain and fintech category awards.</p>
-            </article>
-            <article class="timeline-item ceramic-card reveal">
-              <span class="timeline-year">Jan 2026</span>
-              <h3>FishCapsule spotlight feature</h3>
-              <p>Presented as a grounded AI learning platform with strong citation behavior.</p>
-            </article>
-            <article class="timeline-item ceramic-card reveal">
-              <span class="timeline-year">Fall 2026</span>
-              <h3>Incoming at Penn</h3>
-              <p>Next step: systems engineering with deeper product and infrastructure rigor.</p>
-            </article>
+          <div class="prog-row">
+            <div class="prog-meta"><span>LLM error reduction</span><span>70%</span></div>
+            <div class="prog-bar"><div class="prog-fill" style="width:70%"></div></div>
           </div>
         </div>
-      </section>
+        <div class="award-pill award-blue">Showcased · PIC Spotlight Jan 2026</div>
+        <div class="bc-tags">
+          <span class="bc-tag">Next.js</span>
+          <span class="bc-tag">TypeScript</span>
+          <span class="bc-tag">RAG</span>
+          <span class="bc-tag">LLM</span>
+          <span class="bc-tag">Zod</span>
+          <span class="bc-tag">pdf.js</span>
+        </div>
+      </div>
 
-      <section class="shell contact-block" id="contact">
-        <div class="contact-card ceramic-card reveal">
-          <div class="contact-copy">
-            <p class="section-mark">Contact</p>
-            <h2>Open to building useful things with serious people.</h2>
-            <p>
-              I am interested in internships, research collaborations, and product conversations
-              around AI systems, human-centered tooling, and computational media.
-            </p>
+      <!-- SpiroMint card -->
+      <div class="bc b-spiro">
+        <div class="bc-label">Research · Generative Art</div>
+        <div class="bc-title">Music-Driven Generative Art</div>
+        <div class="bc-body">
+          Undergraduate research with Prof. Jiayin Lu. Maps beats, RMS, spectral centroid, and Mel-band peaks into parametric spirograph curves — a reproducible module for UCLA's Math–Code–Art initiative.<br><br>
+          Built an end-to-end data → geometry → pixels → video pipeline using NumPy, PIL RGBA compositing, and FFmpeg.
+        </div>
+        <div class="bc-tags">
+          <span class="bc-tag">NumPy</span>
+          <span class="bc-tag">PIL</span>
+          <span class="bc-tag">FFmpeg</span>
+          <span class="bc-tag">Audio ML</span>
+          <span class="bc-tag">Python</span>
+        </div>
+      </div>
+
+      <!-- ML -->
+      <div class="bc b-ml">
+        <div class="bc-label">Machine Learning · Kaggle</div>
+        <div class="bc-title">Skin Cancer Classification</div>
+        <div class="bc-body">
+          Full ML pipeline on 50K dermatology rows: feature alignment, unified preprocessing, and structured model comparison. 5-fold cross-validation across Logistic Regression, Random Forest, and XGBoost with univariate screening.<br><br>
+          Final ridge-regularized logistic model scored 0.607 AUC — ranked 7th among ~170 students.
+        </div>
+        <div class="prog" style="margin-top:1rem">
+          <div class="prog-row">
+            <div class="prog-meta"><span>Final ranking</span><span>Top 4%</span></div>
+            <div class="prog-bar"><div class="prog-fill" style="width:96%"></div></div>
           </div>
-          <div class="contact-links">
-            <a href="mailto:harleyjia123@gmail.com">harleyjia123@gmail.com</a>
-            <a href="https://github.com/RukaAtre1" target="_blank" rel="noopener noreferrer">
-              github.com/RukaAtre1
-            </a>
-            <a
-              href="https://www.linkedin.com/in/junhao-harley-jia/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              linkedin.com/in/junhao-harley-jia
-            </a>
-            <a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer">Open resume PDF</a>
+          <div class="prog-row">
+            <div class="prog-meta"><span>Test AUC</span><span>0.607</span></div>
+            <div class="prog-bar"><div class="prog-fill" style="width:75%"></div></div>
           </div>
         </div>
-      </section>
-    </main>
+        <div class="bc-tags">
+          <span class="bc-tag">scikit-learn</span>
+          <span class="bc-tag">XGBoost</span>
+          <span class="bc-tag">ROC/AUC</span>
+          <span class="bc-tag">Python</span>
+        </div>
+      </div>
 
-    <footer class="site-footer">
-      <span>Junhao (Harley) Jia</span>
-      <span>Los Angeles, CA / Philadelphia, PA</span>
-    </footer>
-  </body>
+      <!-- TTI -->
+      <div class="bc b-tti">
+        <div class="bc-label">Internship · Enterprise Analytics</div>
+        <div class="bc-title">TTI PLM Analytics</div>
+        <div class="bc-body">
+          Analyzed 6.18M+ usage logs and 14,624 user records at Techtronic Industries. RFM modeling surfaced 15% underutilized licenses — projected $34K annual savings. Built ETL workflows across Teamcenter and OpenLM. Automated VBA reporting saved 38+ hours/month.
+        </div>
+        <div class="bc-tags">
+          <span class="bc-tag">Pandas</span>
+          <span class="bc-tag">SQL</span>
+          <span class="bc-tag">RFM</span>
+          <span class="bc-tag">VBA</span>
+          <span class="bc-tag">ETL</span>
+        </div>
+      </div>
+
+      <!-- Research mini -->
+      <div class="bc b-research">
+        <div class="bc-label">Skills</div>
+        <div class="skill-item"><span class="skill-name">Python / ML</span><div class="skill-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div></div></div>
+        <div class="skill-item"><span class="skill-name">TypeScript / React</span><div class="skill-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div></div></div>
+        <div class="skill-item"><span class="skill-name">LLM / RAG</span><div class="skill-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div></div></div>
+        <div class="skill-item"><span class="skill-name">SQL / Data Eng</span><div class="skill-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Audio / GenArt</span><div class="skill-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div></div></div>
+        <div class="skill-item"><span class="skill-name">C++ / Systems</span><div class="skill-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div><div class="dot"></div></div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline">
+  <div class="section-inner">
+    <div class="sec-header fade-in">
+      <div class="sec-num">03 — Journey</div>
+      <div class="sec-title">How I got here.</div>
+    </div>
+    <div class="timeline fade-in">
+      <div class="t-item">
+        <div class="t-year">2022</div>
+        <div class="t-main">Enrolled at UCLA</div>
+        <div class="t-sub">B.S. Statistics & Data Science · Minor in Data Science Engineering</div>
+      </div>
+      <div class="t-item">
+        <div class="t-year">Jul – Aug 2025</div>
+        <div class="t-main">PLM Data Analytics Intern · Techtronic Industries</div>
+        <div class="t-sub">Dongguan, China — 6.18M rows analyzed, $34K projected annual savings, 38 hrs/month automated</div>
+      </div>
+      <div class="t-item">
+        <div class="t-year">Sep 2025</div>
+        <div class="t-main">Undergraduate Research · Music-Driven Generative Art</div>
+        <div class="t-sub">Supervised by Prof. Jiayin Lu · UCLA Math–Code–Art initiative · co-authored teaching module</div>
+      </div>
+      <div class="t-item">
+        <div class="t-year">Nov 2025</div>
+        <div class="t-main">SpiroMint · 3rd Place, AI Best Coast 2025</div>
+        <div class="t-sub">Blockchain Winner + Fintech Winner out of 113 teams · audio → on-chain generative art</div>
+      </div>
+      <div class="t-item">
+        <div class="t-year">Jan 2026</div>
+        <div class="t-main">FishCapsule · Showcased at PIC Spotlight Seminar</div>
+        <div class="t-sub">AI self-study platform with schema-first LLM pipeline · 99% citation coverage</div>
+      </div>
+      <div class="t-item">
+        <div class="t-year">Jun 2026</div>
+        <div class="t-main">Graduating UCLA</div>
+        <div class="t-sub">B.S. Statistics & Data Science</div>
+      </div>
+      <div class="t-item future">
+        <div class="t-year">Aug 2026 →</div>
+        <div class="t-main" style="color:#1a3a8a">Incoming MSE · University of Pennsylvania</div>
+        <div class="t-sub">Systems Engineering — AI Systems, Product Development, Applied Machine Learning</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-section fade-in">
+    <div class="contact-left">
+      <div class="contact-eyebrow">Let's connect</div>
+      <div class="contact-h2">Let's build<br>something.</div>
+      <div class="hero-btns">
+        <a href="mailto:harleyjia123@gmail.com" class="btn btn-fill">Send Email</a>
+        <a href="https://github.com/RukaAtre1" class="btn btn-out" target="_blank">GitHub</a>
+      </div>
+    </div>
+    <div class="contact-right">
+      <div>harleyjia123@gmail.com</div>
+      <div>@RukaAtre1</div>
+      <div>Los Angeles, CA</div>
+      <div style="margin-top:0.6rem;color:var(--dim);font-size:9px">→ Philadelphia, PA · Fall 2026</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2026 Junhao (Harley) Jia</span>
+  <span>Los Angeles → Philadelphia</span>
+</footer>
+
+<script>
+/* ── SPIRO DEMO ENGINE ── */
+const canvas = document.getElementById('spirodemo');
+const ctx = canvas.getContext('2d');
+
+let W, H, cx, cy;
+function resize() {
+  const wrap = document.getElementById('demo-canvas-wrap');
+  W = canvas.width = wrap.offsetWidth;
+  H = canvas.height = wrap.offsetHeight;
+  cx = W/2; cy = H/2;
+}
+resize();
+window.addEventListener('resize', resize);
+
+let params = {
+  rotors: 3,
+  speed: 1.0,
+  complexity: 4,
+  trail: 0.04,
+  palette: 'aurora'
+};
+
+const palettes = {
+  aurora: ['#2d4a3e','#8a6c3a','#3a6a5a','#6a4a2a'],
+  fire:   ['#7a3a2a','#8a6c3a','#a05030','#6a3018'],
+  ice:    ['#1a3a8a','#2a5a9a','#3a4a7a','#1a4a6a'],
+  mono:   ['#3a3a38','#6a6a68','#2a2a28','#8a8a88'],
+};
+
+function setPalette(p) { params.palette = p; }
+window.setPalette = setPalette;
+
+let t = 0;
+let trailCanvas = document.createElement('canvas');
+let trailCtx;
+function initTrail() {
+  trailCanvas.width = W; trailCanvas.height = H;
+  trailCtx = trailCanvas.getContext('2d');
+}
+initTrail();
+window.addEventListener('resize', () => { initTrail(); });
+
+function getRotorConfig(n, complexity) {
+  const arr = [];
+  for (let i = 0; i < n; i++) {
+    const phase = (i / n) * Math.PI * 2;
+    const r = (Math.min(W,H)/2) * (0.35 / (i+1));
+    const freq = (complexity * (i+1)) + (i % 2 === 0 ? 0.5 : -0.3);
+    arr.push({ r, freq, phase });
+  }
+  return arr;
+}
+
+function computePos(t) {
+  const rotors = getRotorConfig(params.rotors, params.complexity);
+  let x = cx, y = cy;
+  for (const r of rotors) {
+    x += r.r * Math.cos(r.freq * t + r.phase);
+    y += r.r * Math.sin(r.freq * t + r.phase);
+  }
+  return [x, y];
+}
+
+let lastPos = null;
+let hueShift = 0;
+
+function frame() {
+  const pal = palettes[params.palette];
+
+  // fade trail
+  trailCtx.fillStyle = `rgba(240,236,227,${params.trail})`;
+  trailCtx.fillRect(0, 0, W, H);
+
+  const steps = 4;
+  for (let s = 0; s < steps; s++) {
+    t += params.speed * 0.008;
+    const [x, y] = computePos(t);
+
+    if (lastPos) {
+      const colorIdx = Math.floor(hueShift) % pal.length;
+      trailCtx.strokeStyle = pal[colorIdx];
+      trailCtx.lineWidth = 1.5;
+      trailCtx.globalAlpha = 0.85;
+      trailCtx.beginPath();
+      trailCtx.moveTo(lastPos[0], lastPos[1]);
+      trailCtx.lineTo(x, y);
+      trailCtx.stroke();
+      trailCtx.globalAlpha = 1;
+    }
+    lastPos = [x, y];
+  }
+
+  hueShift += params.speed * 0.04;
+
+  ctx.clearRect(0, 0, W, H);
+  ctx.drawImage(trailCanvas, 0, 0);
+
+  // draw rotor dots
+  const rotors = getRotorConfig(params.rotors, params.complexity);
+  let rx = cx, ry = cy;
+  for (let i = 0; i < rotors.length; i++) {
+    const r = rotors[i];
+    const nx = rx + r.r * Math.cos(r.freq * t + r.phase);
+    const ny = ry + r.r * Math.sin(r.freq * t + r.phase);
+    ctx.beginPath();
+    ctx.arc(rx, ry, r.r, 0, Math.PI*2);
+    ctx.strokeStyle = 'rgba(26,26,24,0.06)';
+    ctx.lineWidth = 0.5;
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(nx, ny, 2.5, 0, Math.PI*2);
+    ctx.fillStyle = palettes[params.palette][i % palettes[params.palette].length];
+    ctx.globalAlpha = 0.7;
+    ctx.fill();
+    ctx.globalAlpha = 1;
+    rx = nx; ry = ny;
+  }
+
+  requestAnimationFrame(frame);
+}
+frame();
+
+// Controls
+function bindControl(id, valId, key, fmt) {
+  const el = document.getElementById(id);
+  const valEl = document.getElementById(valId);
+  el.addEventListener('input', () => {
+    params[key] = parseFloat(el.value);
+    valEl.textContent = fmt ? fmt(params[key]) : params[key];
+    lastPos = null;
+    trailCtx.clearRect(0,0,W,H);
+  });
+}
+bindControl('ctrl-rotors', 'val-rotors', 'rotors');
+bindControl('ctrl-speed', 'val-speed', 'speed', v => v.toFixed(1));
+bindControl('ctrl-complex', 'val-complex', 'complexity');
+bindControl('ctrl-trail', 'val-trail', 'trail', v => v.toFixed(2));
+
+/* ── SCROLL FADE-IN ── */
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+</script>
+</body>
 </html>
