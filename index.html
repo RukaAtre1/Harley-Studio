@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Junhao | AI Systems & Orchestration</title>
-<meta name="description" content="Harley Jia builds controllable AI systems, grounded RAG pipelines, and orchestration workflows designed for reliability, verification, and trust in real-world use.">
+<title>Junhao | Agentic AI & Multimodal Systems</title>
+<meta name="description" content="Harley Jia builds agentic AI, multimodal AI agents, multimodal AI systems, grounded control systems, and controllable AI systems for real production use. Selected for Startup UCLA Summer Accelerator 2026.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -217,6 +217,11 @@ nav {
   background: rgba(26,92,138,0.06); border-color: rgba(26,92,138,0.2);
   color: #1a5c8a;
 }
+.tag-accelerator {
+  background: rgba(138,108,58,0.08);
+  border-color: rgba(138,108,58,0.26);
+  color: #6b4f1a;
+}
 
 .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
 .btn {
@@ -236,6 +241,39 @@ nav {
   border: 0.5px solid var(--line2);
 }
 .btn-out:hover { border-color: var(--accent); color: var(--accent); background: rgba(255,255,255,0.72); }
+
+.founder-signal {
+  display: grid;
+  grid-template-columns: 1.15fr 0.9fr 0.95fr;
+  gap: 1px;
+  width: min(100%, 760px);
+  margin-top: 1.6rem;
+  background: var(--line);
+  border: 0.5px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.founder-cell {
+  padding: 1rem 1.1rem;
+  background: rgba(255,255,255,0.34);
+}
+.founder-k {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--dim);
+  margin-bottom: 3px;
+}
+.founder-v {
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--text);
+}
+.founder-v strong {
+  color: var(--accent2);
+  font-weight: 500;
+}
 
 /* scroll indicator */
 .scroll-hint {
@@ -412,8 +450,10 @@ section { border-top: 0.5px solid var(--line); }
 .award-gold { background: rgba(138,108,58,0.1); color: #6b4f1a; border: 0.5px solid rgba(138,108,58,0.3); }
 .award-blue { background: rgba(1,31,91,0.07); color: #1a3a8a; border: 0.5px solid rgba(1,31,91,0.2); }
 .award-green { background: rgba(45,74,62,0.08); color: #2d4a3e; border: 0.5px solid rgba(45,74,62,0.25); }
+.award-dark { background: rgba(23,27,29,0.72); color: #f8f8f4; border: 0.5px solid rgba(255,255,255,0.12); }
 
 /* grid spans */
+.b-stealth { grid-column: span 12; }
 .b-demo    { grid-column: span 12; }
 .b-fish    { grid-column: span 7; }
 .b-spiro   { grid-column: span 5; }
@@ -473,6 +513,44 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 /* ── TIMELINE ── */
+/* stealth agent card */
+.b-stealth {
+  min-height: 300px;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: end;
+  background:
+    linear-gradient(135deg, rgba(23,27,29,0.97), rgba(49,72,66,0.92)),
+    var(--text);
+  color: #f8f8f4;
+}
+.b-stealth:hover {
+  background:
+    linear-gradient(135deg, rgba(23,27,29,0.98), rgba(49,72,66,0.96)),
+    var(--text);
+}
+.b-stealth .bc-label,
+.b-stealth .bc-link-mark,
+.b-stealth .bc-body,
+.b-stealth .bc-tag,
+.b-stealth .skill-name,
+.b-stealth .skill-proof {
+  color: rgba(248,248,244,0.62);
+}
+.b-stealth .bc-title {
+  color: #f8f8f4;
+  font-size: clamp(46px, 6.4vw, 86px);
+  line-height: 0.98;
+  max-width: 12ch;
+}
+.b-stealth .bc-body {
+  max-width: 54ch;
+  font-size: 19px;
+  color: rgba(248,248,244,0.72);
+}
+.b-stealth .bc-tag {
+  border-color: rgba(255,255,255,0.14);
+}
 .timeline { position: relative; padding-left: 1.5rem; display: flex; flex-direction: column-reverse; }
 .timeline::before {
   content: '';
@@ -495,6 +573,10 @@ input[type=range]::-webkit-slider-thumb {
 }
 .t-item.future::before {
   border-color: #1a3a8a; background: rgba(1,31,91,0.12);
+}
+.t-item.highlight::before {
+  border-color: var(--accent);
+  background: rgba(138,108,58,0.22);
 }
 .t-year {
   font-family: var(--font-mono); font-size: 11px;
@@ -622,6 +704,8 @@ footer {
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
   .stats-grid { grid-template-columns: repeat(2,1fr); }
+  .founder-signal { grid-template-columns: 1fr; }
+  .b-stealth { grid-template-columns: 1fr; gap: 1.6rem; }
   .b-fish, .b-spiro, .b-ml, .b-tti, .b-research { grid-column: span 12; }
   .about-grid { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: 1fr; }
@@ -636,7 +720,8 @@ footer {
   .nav-icon { width: 31px; height: 31px; }
   .hero { padding: 7rem 0 3rem; }
   .hero-content { padding: 0 1.5rem; }
-  .hero-h1 { font-size: clamp(54px, 16vw, 78px); }
+  .hero-eyebrow { flex-wrap: wrap; line-height: 1.8; letter-spacing: 0.18em; }
+  .hero-h1 { font-size: 46px; }
   .hero-sub, .about-text p { font-size: 16px; }
   .scroll-hint { left: 1.5rem; bottom: 1.5rem; }
   .section-inner { padding: 3.5rem 1.5rem; }
@@ -701,26 +786,41 @@ footer {
 <section class="hero" id="top">
   <div class="hero-bg"></div>
   <div class="hero-content">
-    <div class="hero-eyebrow">Controllable AI Systems · Trustworthy Workflows</div>
+    <div class="hero-eyebrow">Agentic AI Systems · Grounded Control</div>
     <h1 class="hero-h1">
-      AI systems,<br>
-      users can guide,<br>
-      and <em>trust.</em>
+      Multimodal<br>
+      AI agents<br>
+      you can <em>trust.</em>
     </h1>
     <p class="hero-sub">
-          I build AI systems for real workflows: grounded generation, validation layers, and orchestration that make outputs inspectable, reproducible, and reliable. Stats & Data Science at UCLA, Systems Engineering at Penn.
+          I build agentic AI systems for real production use: multimodal audio intelligence, autonomous creative execution, and grounded control that keep powerful agents precise, steerable, and reliable. Selected for Startup UCLA Summer Accelerator 2026.
     </p>
     <div class="hero-tags">
-      <span class="tag tag-penn">↗ Incoming Penn MSE '27</span>
-              <span class="tag tag-ucla">UCLA STATS & DATA SCIENCE '26</span>
-      <span class="tag">Grounded Generation</span>
-      <span class="tag">Validation Layers</span>
-      <span class="tag">Agent Pipelines</span>
-      <span class="tag">Workflow Reliability</span>
+      <span class="tag tag-accelerator">Startup UCLA Summer Accelerator 2026</span>
+      <span class="tag">Multimodal AI Agents</span>
+      <span class="tag">Agentic AI Systems</span>
+      <span class="tag">Autonomous Creative Intelligence</span>
+      <span class="tag">Grounded Control</span>
+      <span class="tag tag-penn">Incoming Penn MSE '27</span>
+      <span class="tag tag-ucla">UCLA Stats & Data Science '26</span>
     </div>
     <div class="hero-btns">
-      <a href="#projects" class="btn btn-fill">View Systems</a>
+      <a href="#projects" class="btn btn-fill">View Agents</a>
       <a href="#contact" class="btn btn-out">Get in Touch</a>
+    </div>
+    <div class="founder-signal" aria-label="Startup UCLA accelerator signal">
+      <div class="founder-cell">
+        <div class="founder-k">Accelerator</div>
+        <div class="founder-v"><strong>Startup UCLA</strong> Summer Accelerator 2026</div>
+      </div>
+      <div class="founder-cell">
+        <div class="founder-k">Building</div>
+        <div class="founder-v">Stealth AI audio startup</div>
+      </div>
+      <div class="founder-cell">
+        <div class="founder-k">Cohort</div>
+        <div class="founder-v">Grant-backed summer build · Demo Day Sep 10</div>
+      </div>
     </div>
   </div>
   <div class="scroll-hint">
@@ -742,8 +842,8 @@ footer {
         <div class="stat-l">LLM error reduction</div>
       </div>
       <div class="stat-card">
-        <div class="stat-n"><span>#</span>3<span>/113</span></div>
-        <div class="stat-l">AI Best Coast '25</div>
+        <div class="stat-n">2026</div>
+        <div class="stat-l">Startup UCLA Accelerator</div>
       </div>
       <div class="stat-card">
         <div class="stat-n">99<span>%</span></div>
@@ -763,16 +863,16 @@ footer {
     <div class="about-grid fade-in">
       <div class="about-text">
         <p>
-          I'm a <strong>Statistics & Data Science student at UCLA</strong> finishing my B.S. this June, then heading to <strong>the University of Pennsylvania</strong> for an M.S.E. in Systems Engineering.
+          I'm a <strong>Statistics & Data Science student at UCLA</strong> finishing my B.S. this June, selected for the <strong>Startup UCLA Summer Accelerator 2026</strong>, then heading to <strong>the University of Pennsylvania</strong> for an M.S.E. in Systems Engineering.
         </p>
         <p>
-          The question I care about in AI is not whether a system can generate something impressive. It is whether people can <strong>guide it, verify it, and trust it</strong> when the work actually matters.
+          The question I care about in AI is not whether a model can generate something impressive. It is whether an agent can <strong>understand intent, act across modalities, and stay under grounded control</strong> when the work actually matters.
         </p>
         <p>
-          That shows up across my work: grounded study workflows in FishCapsule, controllable audio-to-visual generation in SpiroMint, and enterprise ETL pipelines at TTI where messy systems had to become dependable enough to drive operational decisions.
+          That shows up across my work: grounded generation in FishCapsule, deterministic audio-to-visual systems in SpiroMint, and enterprise ETL pipelines at TTI where messy systems had to become dependable enough to drive operational decisions.
         </p>
         <p>
-          I've shipped production LLM pipelines, won hackathons, published research modules, and analyzed millions of rows of enterprise data. I want to build <strong>deployable AI systems</strong> where reliability, orchestration, and proof are product requirements from the start.
+          I'm now building as <strong>Co-Founder & CTO</strong> of a stealth AI startup focused on multimodal agents.
         </p>
       </div>
       <div class="profile-card-full">
@@ -784,9 +884,11 @@ footer {
           </div>
         </div>
         <div class="pc-rows">
+          <div class="pc-row"><span class="pc-key">Building</span><span class="pc-val">Stealth AI audio startup</span></div>
+          <div class="pc-row"><span class="pc-key">Accelerator</span><span class="pc-val"><span class="pill pill-ucla">Startup UCLA '26</span></span></div>
           <div class="pc-row"><span class="pc-key">Next</span><span class="pc-val"><span class="pill pill-penn">UPenn MSE '27</span></span></div>
-              <div class="pc-row"><span class="pc-key">Current</span><span class="pc-val"><span class="pill pill-ucla">UCLA Stats & Data Science '26</span></span></div>
-          <div class="pc-row"><span class="pc-key">Focus</span><span class="pc-val">Controllable AI Systems</span></div>
+          <div class="pc-row"><span class="pc-key">Current</span><span class="pc-val"><span class="pill pill-ucla">UCLA Stats & Data Science '26</span></span></div>
+          <div class="pc-row"><span class="pc-key">Focus</span><span class="pc-val">Agentic + Multimodal AI Systems</span></div>
           <div class="pc-row"><span class="pc-key">Research</span><span class="pc-val"><a href="https://jlu227.wixsite.com/kay-lu/teaching" target="_blank" rel="noreferrer">Math + Code + Art</a></span></div>
           <div class="pc-row"><span class="pc-key">Best Award</span><span class="pc-val"><a href="https://devpost.com/software/spiromint" target="_blank" rel="noreferrer">3rd / 113 · AI Best Coast</a></span></div>
           <div class="pc-row"><span class="pc-key">Email</span><span class="pc-val"><a href="mailto:harleyjia123@gmail.com">harleyjia123@gmail.com</a></span></div>
@@ -808,6 +910,18 @@ footer {
 
     <div class="bento fade-in">
 
+      <!-- Stealth Agent -->
+      <div class="bc b-stealth" aria-label="Stealth AI startup">
+        <div>
+          <div class="bc-label">Stealth AI Startup</div>
+          <div class="bc-title">Co-Founder & CTO</div>
+          <div class="bc-body">
+            Multimodal AI Agents.
+          </div>
+          <div class="award-pill award-dark">Selected · Startup UCLA Summer Accelerator 2026</div>
+        </div>
+      </div>
+
       <!-- FishCapsule -->
       <a class="bc b-fish bc-link-card" href="https://fish-capsule.vercel.app/" target="_blank" rel="noreferrer" aria-label="Open FishCapsule">
         <div class="bc-link-mark">Live site</div>
@@ -815,7 +929,7 @@ footer {
         <div class="bc-title">FishCapsule</div>
         <div class="bc-body">
           FishCapsule is a study system built around controlled generation rather than free-form answers. It ingests syllabi, maps courses, selects slides, and keeps every response grounded in the user's actual materials.<br><br>
-          The core pipeline combines schema-first generation with Zod contracts, slide-grounded RAG, hash-based caching, and a validation-and-repair layer. That reduced invalid outputs by 70%, kept citation coverage at 99%, and made the workflow more trustworthy in practice.
+          The core pipeline combines schema-first generation with Zod contracts, slide-grounded RAG, hash-based caching, and a validation-and-repair layer. That reduced invalid outputs by 70%, kept citation coverage at 99%, and made the system more trustworthy in practice.
         </div>
         <div class="prog" style="margin-top:1.2rem">
           <div class="prog-row">
@@ -841,10 +955,10 @@ footer {
       <!-- TTI -->
       <a class="bc b-ml bc-link-card" href="https://www.ttigroup.com/" target="_blank" rel="noreferrer" aria-label="Open Techtronic Industries website">
         <div class="bc-link-mark">Company</div>
-        <div class="bc-label">Internship · ETL Orchestration</div>
+        <div class="bc-label">Internship · Enterprise Data Systems</div>
         <div class="bc-title">TTI PLM Analytics</div>
         <div class="bc-body">
-          Built multi-source ETL workflows across Teamcenter and OpenLM under enterprise system constraints, where the data was messy, operationally important, and tied to recurring reporting needs.<br><br>
+          Built multi-source ETL systems across Teamcenter and OpenLM under enterprise constraints, where the data was messy, operationally important, and tied to recurring reporting needs.<br><br>
           The pipeline covered 6.18M+ usage logs and 14,624 user records, surfaced 15% underutilized licenses, projected $34K annual savings, and automated reporting that saved 38+ hours per month.
         </div>
         <div class="bc-tags">
@@ -935,7 +1049,7 @@ footer {
         <div class="bc-link-mark">GitHub</div>
         <div class="bc-label">Capabilities in Public Work</div>
         <div class="skill-item"><span class="skill-name">Grounded RAG + validation</span><div class="skill-dots"><span class="skill-proof">FishCapsule</span></div></div>
-        <div class="skill-item"><span class="skill-name">Multi-source ETL orchestration</span><div class="skill-dots"><span class="skill-proof">TTI</span></div></div>
+        <div class="skill-item"><span class="skill-name">Multi-source enterprise data systems</span><div class="skill-dots"><span class="skill-proof">TTI</span></div></div>
         <div class="skill-item"><span class="skill-name">Deterministic signal pipelines</span><div class="skill-dots"><span class="skill-proof">SpiroMint</span></div></div>
         <div class="skill-item"><span class="skill-name">Signal-to-structure mapping</span><div class="skill-dots"><span class="skill-proof">Research</span></div></div>
         <div class="skill-item"><span class="skill-name">Full-stack implementation</span><div class="skill-dots"><span class="skill-proof">TypeScript / Python</span></div></div>
@@ -989,7 +1103,7 @@ footer {
       <div class="t-item">
         <div class="t-year">Jul – Aug 2025</div>
         <div class="t-main">Techtronic Industries · First encounter with messy production systems</div>
-        <div class="t-sub">Worked across Teamcenter and OpenLM, built ETL around 6.18M rows, and learned that real operational value depends on workflows staying reliable under imperfect data.</div>
+        <div class="t-sub">Worked across Teamcenter and OpenLM, built ETL around 6.18M rows, and learned that real operational value depends on systems staying reliable under imperfect data.</div>
       </div>
       <div class="t-item">
         <div class="t-year">Sep 2025</div>
@@ -1004,17 +1118,22 @@ footer {
       <div class="t-item">
         <div class="t-year">Jan 2026</div>
         <div class="t-main">FishCapsule · Trust moved to the center of the product</div>
-        <div class="t-sub">Showcased at PIC Spotlight with a schema-first, grounded RAG workflow built around validation, repair, and citation coverage instead of demo-only generation.</div>
+        <div class="t-sub">Showcased at PIC Spotlight with a schema-first, grounded RAG system built around validation, repair, and citation coverage instead of demo-only generation.</div>
       </div>
       <div class="t-item">
         <div class="t-year">Jun 2026</div>
         <div class="t-main">Graduating UCLA · Stronger judgment around what makes AI usable</div>
-        <div class="t-sub">B.S. Statistics & Data Science with public work spanning enterprise pipelines, grounded LLM systems, and deterministic generative workflows.</div>
+        <div class="t-sub">B.S. Statistics & Data Science with public work spanning enterprise pipelines, grounded LLM systems, and deterministic generative systems.</div>
+      </div>
+      <div class="t-item highlight">
+        <div class="t-year">Jul 6 - Sep 10, 2026</div>
+        <div class="t-main">Selected for Startup UCLA Summer Accelerator 2026</div>
+        <div class="t-sub">Selected as Co-Founder & CTO of a stealth AI startup focused on multimodal agents.</div>
       </div>
       <div class="t-item future">
         <div class="t-year">Aug 2026 →</div>
         <div class="t-main" style="color:#1a3a8a">Incoming MSE · University of Pennsylvania</div>
-        <div class="t-sub">Systems Engineering as the next step toward deeper work in controllable AI systems, orchestration, and workflow reliability.</div>
+        <div class="t-sub">Systems Engineering as the next step toward deeper work in controllable AI systems, agent reliability, and grounded control.</div>
       </div>
     </div>
   </div>
@@ -1025,9 +1144,9 @@ footer {
   <div class="contact-section fade-in">
     <div class="contact-left">
       <div class="contact-eyebrow">Best fit</div>
-      <div class="contact-h2">AI systems<br>with judgment.</div>
+      <div class="contact-h2">Agents<br>with judgment.</div>
       <div style="max-width:420px;margin:1rem 0 2rem;color:var(--muted);font-size:15px;line-height:1.85">
-        Best fit for founding-engineer, agent infrastructure, and systems-oriented roles where outputs need to be controllable, verifiable, and reliable in real workflows.
+        Best fit for agentic AI, multimodal systems, founding-engineer, and applied AI product roles where intelligent agents need grounded control and production-level reliability.
       </div>
       <div class="hero-btns">
         <a href="mailto:harleyjia123@gmail.com" class="btn btn-fill">Start a Conversation</a>
